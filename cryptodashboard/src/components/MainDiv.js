@@ -1,26 +1,25 @@
-import React from 'react'
-import Navbar from './Navbar';
+import React from "react";
+import Navbar from "./Navbar";
 
 const MainDiv = () => {
   return (
-    <div className='LandingPage'>
-        <header className='Navbar'> 
+    <div className="LandingPage">
+      <div className="Navbar">
         <Navbar />
-        </header>
-        <div className='TopImage'>
-
-
+      </div>
+      <div className="TopImage"></div>
+      <div className="BlockChainTiles">
+        <div className="TopTiles">
+          <div className="Bitcoin">1</div>
+          <div className="Ethereum">2</div>
         </div>
-       <ul className='BlockChainTiles'>
-         <li className='Bitcoin'> </li>
-          <li className='Ethereum'></li>
-          <li className='Monero'></li>
-          <li className='XRP'></li>
-          <li className='Cardano'></li>
-          <li className='Tezos'></li>
-</ul>
-</div>
-  )
-}
+        <div className="BottomTiles">
+          <div className="Monero">3</div>
+          <div className="XRP">4</div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default MainDiv;
