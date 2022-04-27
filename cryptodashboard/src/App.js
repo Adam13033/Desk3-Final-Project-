@@ -1,11 +1,12 @@
 import './App.css';
+import MainDiv from './components/MainDiv';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Hi</h1>
-      </header>
+      <MainDiv />
+      
+      
     </div>
   );
 }
