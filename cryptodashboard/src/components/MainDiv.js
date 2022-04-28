@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 const MainDiv = () => {
   return (
     <div className="LandingPage">
-      <div className="Navbar">
+      <div>
         <Navbar />
       </div>
       <div className="TopImage"></div>

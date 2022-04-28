@@ -8,15 +8,13 @@ import { BsInfoCircleFill } from "react-icons/bs"
 const Navbar = () => {
   return (
     <div>
-        <ul>
+        <ul className='Navbar'>
         <img className='Logo' src={Logo} alt='Logo' />       
-        <button className="About"><BsInfoCircleFill /></button>
-        <button className="Contact"><GoMail /></button>
+        <button className="About" alt='Get To Know Us'><BsInfoCircleFill /></button>
+        <button className="Contact" alt='Get In Touch'><GoMail /></button>
         <button className="Profile"><VscAccount /></button>
         <button className="Favourites"><IoStar /></button>
         </ul>
-
-
     </div>
   )
 }

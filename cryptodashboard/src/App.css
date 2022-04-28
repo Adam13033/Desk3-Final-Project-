@@ -1,12 +1,8 @@
 * {
   text-align: center;
-  background-color: #17023f;
-  margin: 0;
-  padding: 0;
-  box-sizing:border-box;
-  
-  /* align-items: center;
-  justify-content: center; */
+  /* background-color: #130233; */
+  align-items: center;
+  justify-content: center;
 }
 
 .Logo {
@@ -14,128 +10,134 @@
   height: 50px;
   border-radius: 100%;
   position:absolute;
-  right: 14%;
+  right: 8.5%;
   top: 10px;
+  background-color: #17023f;
 }
 
 .Navbar {
   position: fixed;
+  top: 5%;
+  left: 5%;   
   display:flex;
-  width: 70px;
+  width: 20px;
   height: 90%;
-  border: rgba(56, 4, 104, 0.74) 3px solid;
-  border-radius: 50px;
+  border: rgba(29, 1, 107, 0.74) 3px solid;
+  border-radius: 25px;
+  background-color: #130233;;
 }
 
 .About {
   position: absolute;
   top: 80%;
-  right: 15%;
+  right: 10%;
   font-size: 35px;
   color: rgba(250, 7, 250, 0.74);
   border: none;
+  background-color: #130233;
 }
+
 
 .Contact {
   position: absolute;
-  right: 15%;
+  right: 10%;
   top: 60%;
   font-size: 35px;
   color: rgba(250, 7, 250, 0.74);
   border: none;
+  background-color: #130233;
 }
 
 .Profile {
   position: absolute;
-  right: 15%;
+  right: 10%;
   top: 40%;
   font-size: 35px;
   color: rgb(250, 7, 250, 0.74);
   border: none;
+  background-color: #130233;
 }
 
 .Favourites {
 	position: absolute;
-  right: 15%;
+  right: 10%;
   top: 20%;
   font-size: 35px;
   color: rgb(250, 7, 250, 0.74);
   border: none;
+  background-color: #130233;
 }
 
 
 .LandingPage {
-  display: flex;
-  background-color: #17023f;
-  background-image: linear-gradient(#17023f, #1f074b, #17023f);
-  width: 98vw;
-  height: 95vh;
+  background-color: #19053fd3;
+  background-image: linear-gradient(#130233, #130233, #1f074b);
+  width: 1300px;
+  height: 2000px;
   align-items: center;
-  border-radius: 30px;
-  position: relative;
-  margin-top: 2vh;
-  margin-left: 1vw;
-  border: 3px rgba(56, 4, 104, 0.74) solid;
+  border-radius: 25px;
+  position: absolute;
+  top: 3%;
+  left: 2%;
+  border: 2px rgba(31, 4, 104, 0.74) solid;
 }
 
 .TopImage {
   position: absolute;
-  width: 85%;
+  width: 86%;
   height: 10%;
   left: 10%;
   top: 1%;
-  background-color:rgba(56, 4, 104, 0.74);
+  background-color:rgba(31, 4, 104, 0.336);
   border-radius: 12px;
-  
+  border: 2px rgba(31, 4, 104, 0.74) solid;
 }
 
 .BlockChainTiles {
-  display: flex;
-  flex-direction: column;
-  margin: 0 0 0 8vw;
-}
-
-.TopTiles {
-  display:flex;
-}
-
-.BottomTiles {
-  display:flex;
+  list-style-type: none;
 }
 
 .Bitcoin {
-  display: flex;
-  width: 40vw;
-  height: 24vh;
-  background-color:rgba(56, 4, 104, 0.74);
-  margin: 1vw 1vw;
-  border-radius: 20px;
+  position: absolute;
+  width: 520px;
+  height: 360px;
+  background-color:rgba(31, 4, 104, 0.336);
+  top: 12%;
+  left: 10%;
+  border-radius: 25px;
+  border: 2px rgba(31, 4, 104, 0.74) solid;
 }
 
 .Ethereum {
-  display: flex;
-  width: 40vw;
-  height: 24vh;
-  background-color:rgba(56, 4, 104, 0.74);
-  margin: 1vw 1vw;
-  border-radius: 20px;
+  position: absolute;
+  width: 520px;
+  height: 360px;
+  background-color:rgba(31, 4, 104, 0.336);
+  top: 12%;
+  left: 54.5%;
+  border-radius: 25px;
+  border: 2px rgba(31, 4, 104, 0.74) solid;
 }
 
 .XRP {
-  display: flex;
-  width: 40vw;
-  height: 24vh;
-  background-color:rgba(56, 4, 104, 0.74);
-  margin: 1vw 1vw;
-  border-radius: 20px;
+  position: absolute;
+  width: 520px;
+  height: 360px;
+  background-color:rgba(31, 4, 104, 0.336);
+  top: 31%;
+  left: 10%;
+  border-radius: 25px;
+  border: 2px rgba(31, 4, 104, 0.74) solid;
 }
 
 .Monero {
-  display: flex;
-  width: 40vw;
-  height: 24vh;
-  margin: 1vw 1vw;
-  background-color:rgba(56, 4, 104, 0.74);
-  border-radius: 20px;
+  position: absolute;
+  width: 520px;
+  height: 360px;
+  background-color:rgba(31, 4, 104, 0.336);
+  top: 31%;
+  left: 54.5%;
+  border-radius: 25px;
+  border: 2px rgba(31, 4, 104, 0.74) solid;
 }
 
