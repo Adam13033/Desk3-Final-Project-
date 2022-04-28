@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import CryptoContext from './CryptoContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

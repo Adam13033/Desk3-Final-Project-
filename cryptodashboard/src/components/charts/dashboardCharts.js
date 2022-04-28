@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import { chartDays } from "../utils/data";
 import { CryptoState } from "../../CryptoContext";
-import SelectButton from "./SelectButton";
+import SelectButton from "../selectButton";
+import "../styles/dashboardCharts.css"
 
 const Ethbtcchart = () => {
   const [btc, setBtc] = useState([]);
@@ -55,17 +56,9 @@ const Ethbtcchart = () => {
   let tension = days >= 1 ? 0.4 : 0.01;
 
   return (
-    <div style={{ textAlign: "center" }}>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "grid",
-          flexWrap: "wrap",
-          wrap: 4,
-          justifyContent: "center",
-        }}
-      >
-        <div style={{ width: "75vh" }}>
+    <div className="main-div">
+      <div className="charts">
+        <div className="chart-1">
           {
             <Line
               data={{
@@ -104,7 +97,8 @@ const Ethbtcchart = () => {
             />
           }
         </div>
-        <div style={{ width: "75vh" }}>
+        <div className="chart-spacer" />
+        <div className="chart-2">
           {
             <Line
               data={{
@@ -145,7 +139,7 @@ const Ethbtcchart = () => {
           }
         </div>
       </div>
-      <div style={{ marginTop: "15px" }}>
+      <div className="day-buttons">
         {chartDays.map((day) => (
           <SelectButton
             key={day.value}

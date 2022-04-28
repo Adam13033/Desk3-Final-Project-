@@ -1,0 +1,30 @@
+.main-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.charts{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+
+.chart-1{
+    margin-left: 1vw;
+    width: 42vw;
+}
+
+.chart-spacer {
+    width: 2vw;
+}
+.chart-2 {
+    width: 42vw;
+}
+
+.day-buttons {
+    margin: 0 10%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
