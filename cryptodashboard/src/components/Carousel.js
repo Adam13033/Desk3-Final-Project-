@@ -62,6 +62,7 @@ const Carousel = () => {
   };
 
   return (
+    <div className="container">
     <div className="carousel">
       <AliceCarousel
         mouseTracking
@@ -75,6 +76,7 @@ const Carousel = () => {
         autoPlay
         autoWidth
       />
+    </div>
     </div>
   );
 };

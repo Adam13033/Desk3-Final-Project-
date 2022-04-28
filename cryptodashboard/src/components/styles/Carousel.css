@@ -1,7 +1,15 @@
 @import "react-alice-carousel/lib/alice-carousel.css";
 
 .alice-carousel {
-  
+  width: 100%;
+  flex: auto; 
+}
+.container {
+  /* flex: auto; */
+  /* flex-direction: row; */
+  /* text-align: center; */
+  /* justify-content: center; */
+  width: 100%;
 }
 .carousel {
   height: 50%;
