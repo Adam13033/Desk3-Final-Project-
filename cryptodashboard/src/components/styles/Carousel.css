@@ -3,12 +3,14 @@
 .alice-carousel {
   width: 100%;
   flex: auto; 
+  justify-content: space-between;
+  margin-top: 3%;
 }
 .container {
-  /* flex: auto; */
-  /* flex-direction: row; */
-  /* text-align: center; */
-  /* justify-content: center; */
+  flex: auto;
+  flex-direction: row; 
+  text-align: center;
+   justify-content: center;
   width: 100%;
 }
 .carousel {
@@ -20,9 +22,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-right: 10%;
     cursor: pointer;
     text-transform: uppercase;
-    width:150px;
+    width:100px;
+    justify-content: space-between;
     color: white;
     background-color: red;
 }
