@@ -2,6 +2,7 @@ import React from "react";
 import Ethbtcchart from "../components/charts/dashboardCharts";
 import Carousel from "./Carousel";
 import Navbar from "./Navbar";
+import { CoinsTable } from "./Table";
 
 const MainDiv = () => {
   return (
@@ -20,7 +21,9 @@ const MainDiv = () => {
     
         <Ethbtcchart />
       </div>
-      <div className="Table"> lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum </div>
+      <div className="Table">
+        <CoinsTable />
+      </div>
     </div>
   </div>
   );
