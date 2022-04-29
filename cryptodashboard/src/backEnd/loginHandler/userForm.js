@@ -1,20 +1,25 @@
 import { useState} from "react";
-import { signUp } from "./signUp";
+import { addUser, login } from "./fetchRequests";
 
 export const UserForm = ({ setUser }) => {
     const [username, setUserName] = useState();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    const [logBool, setLogBool] = useState(false);
     const [show, setShow] = useState(false);
 
     const submitHandler = (e) => {
         e.preventDefault();
-        signUp(username, email, password, setUser);
+        if (!logBool) {
+            addUser(username, email, password, setUser);
+        }else{
+            login(username, password);
+        }
     };
 
     return (
         <div>
-            <from onSubmit = {submitHandler}>
+            <form onSubmit = {submitHandler}>
                 <input onChange = {(e) => setUserName(e.target.value)}
                 placeholder = "Username" />
                 <input onChange = {(e) => setEmail(e.target.value)}
@@ -24,8 +29,8 @@ export const UserForm = ({ setUser }) => {
                 type = {show ? "text" : "password"}
                 onMouseOver = {() => setShow (!show)}
                 onMouseOut = {() => setShow (!show)}/>
-                <button type = "submit">SignUp</button>
-            </from>
+                <button onClick = {() => setLogBool(!logBool)}>SignUp</button>
+            </form>
         </div>
     )
 }
