@@ -1,12 +1,10 @@
 .select-button {
-    padding: 10;
-    padding-left: 20;
-    padding-right: 20;
-    width: 22%;
-    height: 5vh;
-    text-align: center;
-    border: 10px solid purple;
-    border-radius: 30%;
+  border: 4px solid purple;
+  width: 100%;
+  margin: 10px;
+  border-radius: 80px;
+  padding: 6px 20px;
+  background-color: #18002d;
     
 }
 
