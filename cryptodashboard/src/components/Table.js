@@ -12,6 +12,7 @@ import {
   TableRow,
   TableBody,
 } from "@material-ui/core";
+import Pagination from "@material-ui/lab/Pagination";
 // import numberWithComma from "./Carousel";
 import "./styles/Table.css";
 
@@ -19,6 +20,7 @@ export const CoinsTable = () => {
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1);
 
   const { currency, symbol } = CryptoState();
 
@@ -46,69 +48,94 @@ export const CoinsTable = () => {
   };
 
   return (
-    <div className="containerTable">
-      <div className="tableTitle">
-        <h3> Cryptocurrency Prices by Market Capitalisation</h3>
-      </div>
-      <TextField
-        className="textfield"
-        label="Search for a Crpyto Currency.."
-        onChange={(e) => setSearch(e.target.value)}
-      />
-      <TableContainer>
-        {loading ? (
-          <LinearProgress className="loadingbar" />
-        ) : (
-          <Table>
-            <TableHead>
-              <TableRow className="tableheading">
-                {[
-                  "Coin",
-                  "Current Price",
-                  "24h Change",
-                  "Percentage from All Time Low",
-                  "Market Cap",
-                ].map((head) => (
-                  <TableCell className="headingCell" key={head} align={head === "Coin" ? "" : "right"}>
-                    {head}
-                  </TableCell>
-                ))}
-              </TableRow>
-            </TableHead>
+    <div className="borderdiv">
+      <div className="containerTable">
+        <div className="tableTitle">
+          <h3> Cryptocurrency Prices by Market Capitalisation</h3>
 
-            <TableBody>
-              {handleSearch().map((row) => {
-                const profit = row.price_change_percentage_24h > 0;
-                return (
-                  <TableRow className="row" key={row.name}>
-                    <TableCell className="cell">
-                      <img src={row?.image} alt={row.name} height="50" />
-                      <div>
-                        <span>{row.symbol}</span>
-                        <span>{row.name}</span>
-                      </div>
+          <TextField
+            className="textfield"
+            label="Search for a Crpyto Currency.."
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
+        <TableContainer>
+          {loading ? (
+            <LinearProgress className="loadingbar" />
+          ) : (
+            <Table  aria-label="simple table">
+              <TableHead>
+                <TableRow className="tableheading">
+                  {[
+                    "Coin",
+                    "Current Price",
+                    "24h Change",
+                    "Percentage from All Time Low",
+                    "Market Cap",
+                  ].map((head) => (
+                    <TableCell
+                      className="headingCell"
+                      key={head}
+                      align={head === "Coin" ? "" : "right"}
+                    >
+                      {head}
                     </TableCell>
-                    <TableCell className="cell" align="right">
-                      {symbol} {row.current_price.toLocaleString("en-us")}
-                      {/* {numberWithComma(row.current_price.toFixed(2))} */}
-                    </TableCell>
-                    <TableCell className="cell" align="right">
-                      {profit && "+"}
-                      {row.price_change_percentage_24h.toFixed(2)}%
-                    </TableCell>
-                    <TableCell className="cell" align="right">
-                      {row.atl_change_percentage}%
-                    </TableCell>
-                    <TableCell className="cell" align="right">
-                      {symbol} {row.market_cap.toLocaleString("en-us")}
-                    </TableCell>
-                  </TableRow>
-                );
-              })}
-            </TableBody>
-          </Table>
-        )}
-      </TableContainer>
+                  ))}
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {handleSearch()
+                  .slice((page - 1) * 10, (page - 1) * 10 + 10)
+                  .map((row) => {
+                    const profit = row.price_change_percentage_24h > 0;
+                    return (
+                      <TableRow className="row" key={row.name}>
+                        <TableCell className="cell">
+                          <div className="coinCell">
+                            <img src={row?.image} alt={row.name} height="50" />
+                            <div className="spanSection">
+                              <span>{row.symbol.toUpperCase()}</span>
+                              <span>{row.name}</span>
+                            </div>
+                          </div>
+                        </TableCell>
+                        <TableCell className="cell" align="right">
+                          {symbol} {row.current_price.toLocaleString("en-us")}
+                          {/* {numberWithComma(row.current_price.toFixed(2))} */}
+                        </TableCell>
+                        <TableCell
+                          className="cell"
+                          align="right"
+                          style={{
+                            color: profit > 0 ? "rgb(14, 203, 129)" : "red",
+                            fontWeight: 500,
+                          }}
+                        >
+                          {profit && "+"}
+                          {row.price_change_percentage_24h.toFixed(2)}%
+                        </TableCell>
+                        <TableCell className="cell" align="right">
+                          {row.atl_change_percentage}%
+                        </TableCell>
+                        <TableCell className="cell" align="right">
+                          {symbol} {row.market_cap.toLocaleString("en-us")}
+                        </TableCell>
+                      </TableRow>
+                    );
+                  })}
+              </TableBody>
+            </Table>
+          )}
+        </TableContainer>
+        <Pagination className="pageList"
+          count={(handleSearch()?.length / 10).toFixed(0)}
+          onChange={(_, value) => {
+            setPage(value);
+            window.scroll(0, 450);
+          }}
+          
+        />
+      </div>
     </div>
   );
 };
