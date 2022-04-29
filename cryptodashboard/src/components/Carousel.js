@@ -22,32 +22,31 @@ const Carousel = () => {
   }, [currency]);
 
 
+  
   const items = trending.map((coin) => {
     let profit = coin?.price_change_percentage_24h >= 0;
-
+    const numberWithComma = coin.current_price.toLocaleString('en-us')
     return (
       <div className="carouselItem">
-        <img
-          src={coin?.image}
-          alt={coin.name}
-          height="80"
-        />
+        <img src={coin?.image} alt={coin.name} height="75" />
+        <div className="symbols">
         <span>
           {coin?.symbol}
           &nbsp;
-          <span
-            style={{
-              color: profit > 0 ? "rgb(14, 203, 129)" : "red",
-              fontWeight: 500,
-            }}
-          >
+          <span className={profit > 0 ?  "green" : "red"}>
             {profit && "+"}
             {coin?.price_change_percentage_24h?.toFixed(2)}%
           </span>
         </span>
-        <span style={{ fontSize: 22, fontWeight: 500 }}>
-          {symbol} amount
+        </div>
+        <div className="symbol">
+        <span style={{ fontSize: 22, fontWeight: 500}}>
+          {symbol}{" "}
+          {coin.current_price <= 0.01
+            ? numberWithComma
+            : numberWithComma}
         </span>
+        </div>
       </div>
     );
   });
@@ -57,26 +56,26 @@ const Carousel = () => {
       items: 1,
     },
     512: {
-      items: 50,
+      items: 35,
     },
   };
 
   return (
     <div className="container">
-    <div className="carousel">
-      <AliceCarousel
-        mouseTracking
-        infinite
-        autoPlayInterval={1000}
-        animationDuration={1500}
-        disableDotsControls
-        disableButtonsControls
-        responsive={responsive}
-        items={items}
-        autoPlay
-        autoWidth
-      />
-    </div>
+      <div className="carousel">
+        <AliceCarousel
+          mouseTracking
+          infinite
+          autoPlayInterval={1000}
+          animationDuration={1500}
+          disableDotsControls
+          disableButtonsControls
+          responsive={responsive}
+          items={items}
+          autoPlay
+          autoWidth
+        />
+      </div>
     </div>
   );
 };

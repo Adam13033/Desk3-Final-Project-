@@ -3,12 +3,12 @@ import { Line } from "react-chartjs-2";
 import { chartDays } from "../utils/data";
 import { CryptoState } from "../../CryptoContext";
 import SelectButton from "../selectButton";
-import "../styles/dashboardCharts.css"
+import "./dashChart.css";
 
-const Ethbtcchart = () => {
+export const Ethbtcchart = () => {
   const [btc, setBtc] = useState([]);
   const [eth, setEth] = useState([]);
-  const { currency } = CryptoState();
+  const { currency} = CryptoState();
   const [days, setDays] = useState(1);
 
   useEffect(() => {
@@ -58,6 +58,7 @@ const Ethbtcchart = () => {
   return (
     <div className="main-div">
       <div className="charts">
+
         <div className="chart-1">
           {
             <Line
@@ -97,7 +98,6 @@ const Ethbtcchart = () => {
             />
           }
         </div>
-        <div className="chart-spacer" />
         <div className="chart-2">
           {
             <Line
@@ -137,9 +137,9 @@ const Ethbtcchart = () => {
               }}
             />
           }
+
         </div>
-      </div>
-      <div className="day-buttons">
+        <div className="day-buttons">
         {chartDays.map((day) => (
           <SelectButton
             key={day.value}
@@ -152,6 +152,8 @@ const Ethbtcchart = () => {
           </SelectButton>
         ))}
       </div>
+      </div>
+
     </div>
   );
 };

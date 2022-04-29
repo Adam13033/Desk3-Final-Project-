@@ -9,11 +9,13 @@ import "../components/styles/Navbar.css";
 const Navbar = () => {
   return (
     <div className="Navbar" >
+      <div className='buttons'>
         <img className='Logo' src={Logo} alt='Logo' />       
         <button className="About"><BsInfoCircleFill /></button>
         <button className="Contact"><GoMail /></button>
         <button className="Profile"><VscAccount /></button>
         <button className="Favourites"><IoStar /></button>
+        </div>
     </div>
   )
 }

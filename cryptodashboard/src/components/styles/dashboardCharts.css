@@ -19,15 +19,12 @@
     width: 2vw;
 }
 .chart-2 {
-    width: 42vw;
+    width: 44vw;
 
 }
 
 .day-buttons {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    justify-content: center;
+    margin-bottom: 5%;
 }
 
 .day-buttons :hover{

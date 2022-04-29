@@ -1,13 +1,12 @@
 
 .Navbar {
-  display: flex;
+
   flex-direction: column;
-  width: 90px;
+  width: 7vh;
   height: 90vh;
   border: rgba(56, 4, 104, 0.74) 3px solid;
   border-radius: 50px;
   background-color: hsl(261, 94%, 13%);
-  align-items: center;
   position: sticky;
   /* justify-content: center; */
 }
