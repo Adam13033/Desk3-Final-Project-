@@ -1,24 +1,31 @@
 import React from "react";
+import Ethbtcchart from "../components/charts/dashboardCharts";
+import Carousel from "./Carousel";
 import Navbar from "./Navbar";
+import { CoinsTable } from "./Table";
 
 const MainDiv = () => {
   return (
     <div className="LandingPage">
-      <div className="Navbar">
-        <Navbar />
+     
+    <div>
+    <Navbar />
+      
+    </div>
+    <div className="Content">
+
+      <div className="CarouselSect">
+      <Carousel />
       </div>
-      <div className="TopImage"></div>
-      <div className="BlockChainTiles">
-        <div className="TopTiles">
-          <div className="Bitcoin">1</div>
-          <div className="Ethereum">2</div>
-        </div>
-        <div className="BottomTiles">
-          <div className="Monero">3</div>
-          <div className="XRP">4</div>
-        </div>
+      <div className="Charts">
+    
+        <Ethbtcchart />
+      </div>
+      <div className="Table">
+        <CoinsTable />
       </div>
     </div>
+  </div>
   );
 };
 

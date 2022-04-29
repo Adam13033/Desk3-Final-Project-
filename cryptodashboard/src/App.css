@@ -1,14 +1,9 @@
 * {
-  text-align: center;
-  background-color: #17023f;
-  margin: 0;
-  padding: 0;
-  box-sizing:border-box;
-  
-  /* align-items: center;
-  justify-content: center; */
+  /* background-color: #17023f; */
 }
-
+.content {
+  width: 95%;
+}
 .Logo {
   width: 50px;
   height: 50px;
@@ -17,125 +12,26 @@
   right: 14%;
   top: 10px;
 }
+.CarouselSect {
+margin-bottom: 7%;
+}
 
 .Navbar {
-  position: fixed;
-  display:flex;
-  width: 70px;
+  position: sticky;
   height: 90%;
-  border: rgba(56, 4, 104, 0.74) 3px solid;
   border-radius: 50px;
 }
-
-.About {
-  position: absolute;
-  top: 80%;
-  right: 15%;
-  font-size: 35px;
-  color: rgba(250, 7, 250, 0.74);
-  border: none;
-}
-
-.Contact {
-  position: absolute;
-  right: 15%;
-  top: 60%;
-  font-size: 35px;
-  color: rgba(250, 7, 250, 0.74);
-  border: none;
-}
-
-.Profile {
-  position: absolute;
-  right: 15%;
-  top: 40%;
-  font-size: 35px;
-  color: rgb(250, 7, 250, 0.74);
-  border: none;
-}
-
-.Favourites {
-	position: absolute;
-  right: 15%;
-  top: 20%;
-  font-size: 35px;
-  color: rgb(250, 7, 250, 0.74);
-  border: none;
-}
-
 
 .LandingPage {
   display: flex;
   background-color: #17023f;
   background-image: linear-gradient(#17023f, #1f074b, #17023f);
-  width: 98vw;
-  height: 95vh;
+  height: 92%;
   align-items: center;
   border-radius: 30px;
-  position: relative;
-  margin-top: 2vh;
-  margin-left: 1vw;
   border: 3px rgba(56, 4, 104, 0.74) solid;
 }
 
-.TopImage {
-  position: absolute;
-  width: 85%;
-  height: 10%;
-  left: 10%;
-  top: 1%;
-  background-color:rgba(56, 4, 104, 0.74);
-  border-radius: 12px;
-  
-}
 
-.BlockChainTiles {
-  display: flex;
-  flex-direction: column;
-  margin: 0 0 0 8vw;
-}
 
-.TopTiles {
-  display:flex;
-}
-
-.BottomTiles {
-  display:flex;
-}
-
-.Bitcoin {
-  display: flex;
-  width: 40vw;
-  height: 24vh;
-  background-color:rgba(56, 4, 104, 0.74);
-  margin: 1vw 1vw;
-  border-radius: 20px;
-}
-
-.Ethereum {
-  display: flex;
-  width: 40vw;
-  height: 24vh;
-  background-color:rgba(56, 4, 104, 0.74);
-  margin: 1vw 1vw;
-  border-radius: 20px;
-}
-
-.XRP {
-  display: flex;
-  width: 40vw;
-  height: 24vh;
-  background-color:rgba(56, 4, 104, 0.74);
-  margin: 1vw 1vw;
-  border-radius: 20px;
-}
-
-.Monero {
-  display: flex;
-  width: 40vw;
-  height: 24vh;
-  margin: 1vw 1vw;
-  background-color:rgba(56, 4, 104, 0.74);
-  border-radius: 20px;
-}
 
