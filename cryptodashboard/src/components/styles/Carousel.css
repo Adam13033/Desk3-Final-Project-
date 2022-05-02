@@ -4,7 +4,10 @@
   width: 95vw;
   flex: auto; 
   margin-top: 2%;
-
+  margin-left: 2%;
+}
+.image {
+  margin-right: 10;
 }
 .container {
   flex: auto;
@@ -26,6 +29,10 @@
     text-transform: uppercase;
     width:5vw;
     color: white;
+
+}
+.alice-carousel__stage-item {
+  margin: 0 30px;
 }
 
 .red {

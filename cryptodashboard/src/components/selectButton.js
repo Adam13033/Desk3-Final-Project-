@@ -1,12 +1,6 @@
+import "./styles/selectButton.css";
 
-import './styles/selectButton.css'
-
-
-const SelectButton = ({ children, selected, onClick }) => {
-
-
-
-
+const SelectButton = ({ children, onClick }) => {
   return (
     <span onClick={onClick} className="select-button">
       {children}

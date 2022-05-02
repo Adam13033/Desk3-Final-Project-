@@ -15,6 +15,7 @@ import {
 import Pagination from "@material-ui/lab/Pagination";
 // import numberWithComma from "./Carousel";
 import "./styles/Table.css";
+import { useHistory } from "react-router-dom";
 
 export const CoinsTable = () => {
   const [coins, setCoins] = useState([]);
@@ -33,6 +34,7 @@ export const CoinsTable = () => {
     setCoins(data);
     setLoading(false);
   };
+  const history = useHistory();
 
   useEffect(() => {
     fetchCoins();
@@ -63,7 +65,7 @@ export const CoinsTable = () => {
           {loading ? (
             <LinearProgress className="loadingbar" />
           ) : (
-            <Table  aria-label="simple table">
+            <Table aria-label="simple table">
               <TableHead>
                 <TableRow className="tableheading">
                   {[
@@ -89,7 +91,11 @@ export const CoinsTable = () => {
                   .map((row) => {
                     const profit = row.price_change_percentage_24h > 0;
                     return (
-                      <TableRow className="row" key={row.name}>
+                      <TableRow
+                        className="row"
+                        key={row.name}
+                        onClick={() => history.push(`/coins/${row.id}`)}
+                      >
                         <TableCell className="cell">
                           <div className="coinCell">
                             <img src={row?.image} alt={row.name} height="50" />
@@ -127,13 +133,13 @@ export const CoinsTable = () => {
             </Table>
           )}
         </TableContainer>
-        <Pagination className="pageList"
+        <Pagination
+          className="pageList"
           count={(handleSearch()?.length / 10).toFixed(0)}
           onChange={(_, value) => {
             setPage(value);
             window.scroll(0, 450);
           }}
-          
         />
       </div>
     </div>

@@ -25,3 +25,22 @@ export const chartDays = [
     }
   ];
   
+
+  export const cryptoMenu = [
+    {
+      id: "bitcoin",
+      symbol: "BTC"
+    },
+    {
+      id: "ethereum",
+      symbol: "ETH"
+    },
+    {
+      id: "cake-monster",
+      symbol: "MONSTA"
+    },
+    {
+      id: "monero",
+      symbol: "XMR"
+    }
+  ]
