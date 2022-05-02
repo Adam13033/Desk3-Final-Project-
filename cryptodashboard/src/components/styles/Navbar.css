@@ -1,77 +1,41 @@
-
 .Navbar {
-
-  flex-direction: column;
-  width: 5vh;
-  height: 70vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   border: rgba(56, 4, 104, 0.74) 3px solid;
-  border-radius: 50px;
   background-color: hsl(261, 94%, 13%);
-  position: sticky;
-  text-align: center;
-  top: 20%;
-  /* justify-content: center; */
-}
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 
-.Logo {
-  margin-top: 6vh;
-  margin-bottom: 4vh;
-  width: 50px;
-  height: 50px;  
+  justify-content:space-evenly;
   
 }
 
-.About {
-  margin-top: 10vh;
-  margin-bottom: 4vh;
+ .Logo {
+  width: 80px;
+  height: 80px;  
+}
+
+.buttons {
   font-size: 35px;
   color: rgba(250, 7, 250, 0.74);
   border: none;
   background-color: #17023f;
+  
 }
 
-.Contact {
-  margin-top: 4vh;
-  margin-bottom: 4vh;
-  font-size: 35px;
-  color: rgba(250, 7, 250, 0.74);
-  border: none;
-  background-color: #17023f;
-}
 
-.Profile {
-  margin-top: 4vh;
-  margin-bottom: 4vh;
-  font-size: 35px;
-  color: rgb(250, 7, 250, 0.74);
-  border: none;
-  background-color: #17023f;
-}
-
-.Favourites {
-  margin-top: 4vh;
-  margin-bottom: 4vh;
-  font-size: 35px;
-  color: rgb(250, 7, 250, 0.74);
-  border: none;
-  background-color: #17023f;
-}
-
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  .Navbar {
-    height: 30vh;
-  }
+/* 
+@media only screen and (max-width: 768px) { 
+   For mobile phones:  
   .Navbar {
 
-    flex-direction: column;
-    width: 7vh;
-    height: 90vh;
+
     border: rgba(56, 4, 104, 0.74) 3px solid;
     border-radius: 50px;
     background-color: hsl(261, 94%, 13%);
-    position: sticky;
-    /* justify-content: center; */
+    position: sticky; 
+     justify-content: center; 
   }
   
   .Logo {
@@ -82,7 +46,7 @@
     
   }
   
-  .About {
+  .buttons {
     margin-top: 4vh;
     margin-bottom: 4vh;
     font-size: 35px;
@@ -90,31 +54,4 @@
     border: none;
     background-color: #17023f;
   }
-  
-  .Contact {
-    margin-top: 4vh;
-    margin-bottom: 4vh;
-    font-size: 35px;
-    color: rgba(250, 7, 250, 0.74);
-    border: none;
-    background-color: #17023f;
-  }
-  
-  .Profile {
-    margin-top: 4vh;
-    margin-bottom: 4vh;
-    font-size: 35px;
-    color: rgb(250, 7, 250, 0.74);
-    border: none;
-    background-color: #17023f;
-  }
-  
-  .Favourites {
-    margin-top: 4vh;
-    margin-bottom: 4vh;
-    font-size: 35px;
-    color: rgb(250, 7, 250, 0.74);
-    border: none;
-    background-color: #17023f;
-  }
-}
+}  */

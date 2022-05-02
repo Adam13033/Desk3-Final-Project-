@@ -1,30 +1,17 @@
-import './App.css';
-// import MainDiv from './components/MainDiv';
-import { UserForm } from "./backEnd/loginHandler/userForm";
-import { tokenFetch } from "./backEnd/loginHandler/signUp";
-import { useState, useEffect } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
+import "./App.css";
+import CoinPage from "./components/CoinPage";
+import MainDiv from "./components/MainDiv";
 
 const App = () => {
-
-  const [user, setUser] = useState();
-
-  useEffect(() => {
-    if (localStorage.key("myToken"))
-    {tokenFetch(setUser)}
-  })
-
-  
   return (
-    <div className="UserForm">
-      <div>
-      {user ? <h1>{user}</h1> : <h1>Please enter Username</h1>}
-      </div>
-      <UserForm setUser = {setUser}/>
+    <div className="App">
+      <BrowserRouter>
+        <Route path="/" component={MainDiv} exact />
+        <Route path={"/coins/:id"} component={CoinPage} exact />
+      </BrowserRouter>
     </div>
-    // <div className="App">
-    //   <MainDiv />
-    // </div>
   );
-}
+};
 
 export default App;
