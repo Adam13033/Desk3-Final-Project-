@@ -9,9 +9,8 @@ const App = () => {
   const [user, setUser] = useState();
 
   useEffect(() => {
-    if (localStorage.key("myToken"))
-    {tokenFetch(setUser)}
-  })
+    tokenFetch(setUser)
+  }, [])
 
   
   return (
