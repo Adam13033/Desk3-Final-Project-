@@ -5,10 +5,9 @@
   border: rgba(56, 4, 104, 0.74) 3px solid;
   background-color: hsl(261, 94%, 13%);
   border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
+  border-bottom-right-radius: 50px;  
+  justify-content: space-between;
 
-  justify-content:space-evenly;
-  
 }
 
  .Logo {
@@ -21,8 +20,29 @@
   color: rgba(250, 7, 250, 0.74);
   border: none;
   background-color: #17023f;
-  
+  margin: 0 1vw;
 }
+
+.navLeft{
+  /* border: solid red 3px; */
+  margin-left: 1vw;
+
+}
+
+.navMiddle{
+  /* border: solid red 3px; */
+  margin-left: 10vw;
+ 
+
+}
+.navRight{
+  /* border: solid red 3px; */
+  margin-right: 1vw;
+
+}
+
+
+
 
 
 /* 

@@ -1,20 +1,15 @@
 .containerTable {
-  /* container for the whole table */
-  /* background-color: rgb(255, 255, 255); */
   border-radius: 8px;
   color: rgb(255, 255, 255);
   display: flex;
-  flex-direction: column;
-  
+  flex-direction: column; 
 }
 
 .borderdiv {
-    border: 4px solid rgb(43, 255, 0);
-    border-radius: 4px;
-    width: 90%;
-    justify-content:center;
- 
+    border: 4px solid purple;
+    width: 100%; 
 }
+
 .tableTitle {
   background-color: rgb(9, 0, 27);
   text-align: center;
