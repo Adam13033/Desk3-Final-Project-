@@ -1,15 +1,17 @@
 .containerTable {
+  /* container for the whole table */
+  /* background-color: rgb(255, 255, 255); */
   border-radius: 8px;
   color: rgb(255, 255, 255);
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
+  
 }
 
 .borderdiv {
-    border: 4px solid purple;
-    width: 100%; 
+    border: 4px solid purple
+ 
 }
-
 .tableTitle {
   background-color: rgb(9, 0, 27);
   text-align: center;
@@ -24,7 +26,7 @@
   background-color: rgb(22, 0, 65);
   width: 90%;
   border-radius: 25px;
-
+  margin-top: 1000px;
 }
 
 .tableheading {
@@ -67,4 +69,8 @@ background-image: linear-gradient(#17023f, #1f074b, #17023f); */
 
 .pageList{
     background-color: white;
+}
+
+h3 {
+  margin-bottom: 4vh;
 }

@@ -1,9 +1,3 @@
-/* .LandingPage {
-    background-color: #ffffff;
-    background-image: linear-gradient(#fefeff, #1f074b, #17023f);
-    border-radius: 1000px;
-} */
-  
 .CarouselSect {
     margin-bottom: 2%;
 }
@@ -21,6 +15,7 @@
 .navContainer{
     /* border: 3px solid rgb(255, 208, 0); */
     width:100%; 
+    
 }
 
 .Table {

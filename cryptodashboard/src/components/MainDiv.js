@@ -4,6 +4,7 @@ import Carousel from "./Carousel";
 import { CoinsTable } from "./Table";
 import "./styles/MainDiv.css";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const MainDiv = () => {
   return (
@@ -22,6 +23,7 @@ const MainDiv = () => {
           <CoinsTable />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

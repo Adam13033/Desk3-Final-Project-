@@ -52,22 +52,24 @@ export const CoinsTable = () => {
   return (
     <div className="borderdiv">
       <div className="containerTable">
-        <div className="tableTitle">
+        <div className="tableTitle" >
           <h3> Cryptocurrency Prices by Market Capitalisation</h3>
 
           <TextField
             className="textfield"
             label="Search for a Crpyto Currency.."
             onChange={(e) => setSearch(e.target.value)}
+            
+            
           />
         </div>
-        <TableContainer>
+        <TableContainer >
           {loading ? (
             <LinearProgress className="loadingbar" />
           ) : (
             <Table aria-label="simple table">
-              <TableHead>
-                <TableRow className="tableheading">
+              <TableHead className="tableHead">
+                <TableRow className="tableheading" >
                   {[
                     "Coin",
                     "Current Price",
@@ -79,6 +81,7 @@ export const CoinsTable = () => {
                       className="headingCell"
                       key={head}
                       align={head === "Coin" ? "" : "right"}
+                      
                     >
                       {head}
                     </TableCell>
