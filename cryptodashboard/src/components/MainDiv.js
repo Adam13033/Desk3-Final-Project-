@@ -8,27 +8,17 @@ import Navbar from "./Navbar";
 const MainDiv = () => {
   return (
     <div className="LandingPage">
-
-      <div className="navBar-Container">
-
-
+      <div className="navContainer">
+        <Navbar />
       </div>
-      <Navbar />
       <div className="Content">
-
         <div className="CarouselSect">
-       
           <Carousel />
-          
         </div>
-
-         <div className="Charts">
-       
-        <Ethbtcchart />
-        
+        <div className="Charts">
+          <Ethbtcchart />
         </div>
         <div className="Table">
-       
           <CoinsTable />
         </div>
       </div>

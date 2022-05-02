@@ -1,10 +1,10 @@
 @import "react-alice-carousel/lib/alice-carousel.css";
 
 .alice-carousel {
-  width: 95vw;
+  width: 80vw;
   flex: auto; 
   margin-top: 2%;
-  margin-left: 2%;
+  /* margin-left: 2%; */
 }
 .image {
   margin-right: 10;
