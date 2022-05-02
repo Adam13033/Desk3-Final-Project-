@@ -4,8 +4,8 @@ const User = require("./model");
 exports.addUser = async (req, res) => {
     try{
         const user = await User.create(req.body);
-        const token = await jwt.sign({user: user.username, token});
-        res.status(200).send({user: user.username, token});
+        const token = await jwt.sign({user: user.username, password: user.password});
+        res.status(200).send({user: user.username, token: token});
     }catch (error){
         console.log(error);
         res.status(500).send({err: error.message});

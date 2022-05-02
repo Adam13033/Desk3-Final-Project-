@@ -52,3 +52,11 @@ exports.tokenCheck = async (req, res, next) => {
         res.status(500).send({err: error.message});
     }
 };
+
+class HttpError extends Error {
+
+    constructor(message, statusCode) {
+        super(message);
+        this.statusCode = statusCode;
+    }
+}
