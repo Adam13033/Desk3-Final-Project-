@@ -132,7 +132,7 @@ export const ChartWMenu = ({ day, tension, days }) => {
               datasets: [
                 {
                   data: chartOne.map((coin) => coin[1]),
-                  label: `${btc} Price ( Past ${day}  ) in ${currency}`,
+                  label: `${btc} Price ( Past ${day} ) in ${currency}`,
                   borderColor: "rgb(192,192,192)",
                 },
               ],

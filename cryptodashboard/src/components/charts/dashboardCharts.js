@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-
 import { chartDays } from "../utils/data";
-
 import SelectButton from "../selectButton";
 import "./dashChart.css";
 import ChartWMenu from "./chartOne";
