@@ -1,13 +1,14 @@
-import { LinearProgress, makeStyles, Typography } from "@material-ui/core";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ReactHtmlParser from "react-html-parser";
 import { SingleCoin } from "./utils/api";
-
 import { CryptoState } from "../CryptoContext";
-import ChartTwo from "./charts/chartTwo";
+// import ChartTwo from "./charts/chartTwo";
 import Navbar from "./Navbar";
+import Ethbtcchart from "./charts/dashboardCharts";
+import Footer from "./Footer";
+import "./styles/CoinPage.css";
 
 const CoinPage = ({ btcData, data }) => {
   const { id } = useParams();
@@ -19,7 +20,7 @@ const CoinPage = ({ btcData, data }) => {
 
     setCoin(data);
   };
-
+  
   console.log("data", { data });
 
   useEffect(() => {
@@ -27,129 +28,148 @@ const CoinPage = ({ btcData, data }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const useStyles = makeStyles((theme) => ({
-    container: {
-      display: "flex",
-      [theme.breakpoints.down("md")]: {
-        flexDirection: "column",
-        alignItems: "center",
-      },
-    },
-    sidebar: {
-      width: "30%",
-      [theme.breakpoints.down("md")]: {
-        width: "100%",
-      },
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      marginTop: 25,
-      borderRight: "2px solid grey",
-    },
-    heading: {
-      fontWeight: "bold",
-      marginBottom: 20,
-      fontFamily: "Montserrat",
-    },
-    description: {
-      width: "100%",
-      fontFamily: "Montserrat",
-      padding: 25,
-      paddingBottom: 15,
-      paddingTop: 0,
-      textAlign: "justify",
-    },
-    marketData: {
-      alignSelf: "start",
-      padding: 25,
-      paddingTop: 10,
-      width: "100%",
-      [theme.breakpoints.down("md")]: {
-        display: "flex",
-        justifyContent: "space-around",
-      },
-      [theme.breakpoints.down("sm")]: {
-        flexDirection: "column",
-        alignItems: "center",
-      },
-      [theme.breakpoints.down("xs")]: {
-        alignItems: "start",
-      },
-    },
-  }));
-  const classes = useStyles();
 
-  if (!coin) return <LinearProgress style={{ backgroundColor: "gold" }} />;
+
+  // if (!coin) return <LinearProgress style={{ backgroundColor: "gold" }} />;
 
   return (
-    <div className={classes.container}>
+    <div className="container">
       <Navbar />
-      <div className={classes.sidebar}>
+      <div className="topside">
         <img
           src={coin?.image.large}
           alt={coin?.name}
           height="200"
           style={{ marginBottom: 20 }}
         />
-        <Typography variant="h3" className={classes.heading}>
+        <h3 className="headingTitle">
           {coin?.name}
-        </Typography>
-        <Typography variant="subtitle1" className={classes.description}>
-          {ReactHtmlParser(coin?.description.en.split(". ")[0])}.
-        </Typography>
-        <div className={classes.marketData}>
-          <span style={{ display: "flex" }}>
-            <Typography variant="h5" className={classes.heading}>
+        </h3>
+        <h3 className="headingSymbol">
+        {coin?.symbol.toUpperCase()}
+        </h3>
+        <div className="description">
+        <p>
+          {ReactHtmlParser(coin?.description.en)}
+        </p>
+        </div>
+        <div className="marketData">
+          <div className="dataSection"> 
+            <h5 className="heading">
               Rank:
-            </Typography>
+            </h5>
             &nbsp; &nbsp;
-            <Typography
-              variant="h5"
-              style={{
-                fontFamily: "Montserrat",
-              }}
-            >
+            <h5 className="heading">
               {coin?.market_cap_rank}
-            </Typography>
-          </span>
-
-          <span style={{ display: "flex" }}>
-            <Typography variant="h5" className={classes.heading}>
+            </h5>
+          </div>
+          <div className="dataSection">
+            <h5 className="heading">
               Current Price:
-            </Typography>
+            </h5>
             &nbsp; &nbsp;
-            <Typography
-              variant="h5"
-              style={{
-                fontFamily: "Montserrat",
-              }}
-            >
+            <h5 className="heading">
               {symbol} {coin?.market_data.current_price[currency.toLowerCase()]}
-            </Typography>
-          </span>
-          <span style={{ display: "flex" }}>
-            <Typography variant="h5" className={classes.heading}>
+            </h5>
+          </div>
+          <div className="dataSection">
+            <h5 className="heading">
               Market Cap:
-            </Typography>
+            </h5>
             &nbsp; &nbsp;
-            <Typography
-              variant="h5"
-              style={{
-                fontFamily: "Montserrat",
-              }}
-            >
+            <h5>
               {symbol}{" "}
               {coin?.market_data.market_cap[currency.toLowerCase()]
                 .toString()
                 .slice(0, -6)}
               M
-            </Typography>
-          </span>
+            </h5>
+          </div>
+          <div className="dataSection">
+            <h5 className="heading">
+              All Time High (ATH):
+            </h5>
+            &nbsp; &nbsp;
+            <h5 className="heading">
+              {symbol} {coin?.market_data.ath[currency.toLowerCase()]}
+            </h5>
+          </div>
+          <div className="dataSection">
+            <h5 className="heading">
+              Current Circulating Supply:
+            </h5>
+            &nbsp; &nbsp;
+            <h5 className="heading">
+              {coin?.market_data.circulating_supply}
+            </h5>
+          </div>
+          <div className="dataSection">
+            <h5 className="heading">
+              Max Supply:
+            </h5>
+            &nbsp; &nbsp;
+            <h5 className="heading">
+              {coin?.market_data.max_supply}
+            </h5>
+          </div>
         </div>
       </div>
-      <ChartTwo coin={coin} />
+      <Ethbtcchart />
+      <Footer />
     </div>
   );
 };
 
 export default CoinPage;
+
+// const useStyles = makeStyles((theme) => ({
+//   container: {
+//     display: "flex",
+//     [theme.breakpoints.down("md")]: {
+//       flexDirection: "column",
+//       alignItems: "center",
+//     },
+//   },
+//   sidebar: {
+//     width: "30%",
+//     [theme.breakpoints.down("md")]: {
+//       width: "100%",
+//     },
+//     display: "flex",
+//     flexDirection: "column",
+//     alignItems: "center",
+//     marginTop: 25,
+//     borderRight: "2px solid grey",
+//   },
+//   heading: {
+//     fontWeight: "bold",
+//     marginBottom: 20,
+//     fontFamily: "Montserrat",
+//   },
+//   description: {
+//     width: "100%",
+//     fontFamily: "Montserrat",
+//     padding: 25,
+//     paddingBottom: 15,
+//     paddingTop: 0,
+//     textAlign: "justify",
+//   },
+//   marketData: {
+//     alignSelf: "start",
+//     padding: 25,
+//     paddingTop: 10,
+//     width: "100%",
+//     [theme.breakpoints.down("md")]: {
+//       display: "flex",
+//       justifyContent: "space-around",
+//     },
+//     [theme.breakpoints.down("sm")]: {
+//       flexDirection: "column",
+//       alignItems: "center",
+//     },
+//     [theme.breakpoints.down("xs")]: {
+//       alignItems: "start",
+//     },
+//   },
+// }));
+// const classes = useStyles();
