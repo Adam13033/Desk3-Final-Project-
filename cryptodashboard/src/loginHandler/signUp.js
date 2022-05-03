@@ -63,3 +63,20 @@ export const replace = async (username, password, email, setUser) => {
     console.error(error.message)
   }
 }
+
+export const favourites = async (_id, setFavourites) => {
+  try {
+    const res = await fetch("http://localhost:3001/user", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        _id: _id,
+        favourites: setFavourites,
+      }),
+    })
+    const data = await res.json()
+    setFavourites(data.favourites)
+  } catch (error) {
+    console.error(error.message)
+  }
+}
