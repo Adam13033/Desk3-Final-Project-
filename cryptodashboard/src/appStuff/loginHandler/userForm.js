@@ -7,8 +7,8 @@ export const UserForm = ({ setUser }) => {
   const [password, setPassword] = useState();
   const [show, setShow] = useState(false);
 
-  const submitHandler = (e) => {
-    e.preventDefault();
+  const submitHandler = (event) => {
+    event.preventDefault();
     signUp(username, email, password, setUser);
   };
 

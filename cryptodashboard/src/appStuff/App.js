@@ -1,7 +1,7 @@
-import './App.css';
+// import './App.css';
 // import MainDiv from './components/MainDiv';
-import { UserForm } from "./backEnd/loginHandler/userForm";
-import { tokenFetch } from "./backEnd/loginHandler/signUp";
+import { UserForm } from "../appStuff/loginHandler/userForm";
+import { tokenFetch } from "../appStuff/loginHandler/signUp";
 import { useState, useEffect } from "react";
 
 const App = () => {
