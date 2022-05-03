@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  border: rgba(93, 1, 180, 0.74) 2px solid;
+  border-bottom: rgba(94, 1, 180, 0.459) 2px solid;
   background-image: linear-gradient(to right, rgba(174, 0, 255, 0.068), rgba(174, 0, 255, 0.164),rgba(174, 0, 255, 0.068));
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;  
@@ -11,8 +11,10 @@
 }
 
  .Logo {
-  width: 80px;
-  height: 80px;  
+  width: 90px;
+  height: 90px;  
+  border-radius: 100%;
+  color: rgb rgb(255, 0, 200);
 }
 
 .buttons {

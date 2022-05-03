@@ -34,8 +34,7 @@
     margin-bottom: 5%;
 }
 
-
-.day-buttons :hover{
+.day-buttons:hover{
     background-color: blueviolet;
 }
 

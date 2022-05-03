@@ -5,12 +5,10 @@
   color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
-  
 }
 
 .borderdiv {
-    border: 4px solid purple
- 
+  border: 4px solid purple;
 }
 .tableTitle {
   background-color: rgb(9, 0, 27);
@@ -57,7 +55,7 @@
 }
 
 .cell {
-  /* border: 4px solid purple; */
+  border: 2px solid purple;
 }
 
 span {

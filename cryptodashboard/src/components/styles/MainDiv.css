@@ -6,8 +6,8 @@
 .LandingPage {
     display: flex;
     flex-direction: column;
-    background-color: #10012bf1;
-    background-image: linear-gradient(#17023f, #1f074b, #17023f);
+    background-color: #10012b;
+    background-image: linear-gradient(#17023f3b, #17023f, #17023f46);
     align-items: center;     
 
 }
