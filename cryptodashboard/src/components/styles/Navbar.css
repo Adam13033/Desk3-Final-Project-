@@ -25,6 +25,17 @@
   margin: 0 1vw;
 }
 
+/* .button1 {
+  font-size: 45px;
+  color: rgba(230, 7, 250, 0.959);
+  border: none;
+  background-color: rgba(174, 0, 255, 0);
+  margin: 0 1vw;
+  position: absolute;
+  right: 18%;
+  top: 3%;
+} */
+
 .navLeft{
   /* border: solid red 3px; */
   margin-left: 1vw;
@@ -33,17 +44,12 @@
 
 .navMiddle{
   /* border: solid red 3px; */
-  margin-left: 12vw;
- 
-
+  margin-left: 10vw;
 }
 .navRight{
   /* border: solid red 3px; */
   margin-right: 1vw;
-
 }
-
-
 
 
 
