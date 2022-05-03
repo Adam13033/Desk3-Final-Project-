@@ -5,8 +5,19 @@ import { CoinsTable } from "./Table";
 import "./styles/MainDiv.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { UserForm } from "../loginHandler/userForm";
+import { tokenFetch } from "../loginHandler/signUp";
+import { useState, useEffect } from "react";
 
 const MainDiv = () => {
+
+  const [user, setUser] = useState();
+
+  useEffect(() => {
+    tokenFetch(setUser)
+    console.log("testing user", user)
+  }, [])
+
   return (
     <div className="LandingPage">
       <div className="navContainer">
@@ -17,7 +28,7 @@ const MainDiv = () => {
           <Carousel />
         </div>
         <div className="Charts">
-          <Ethbtcchart />
+          {user ? <Ethbtcchart /> : <UserForm setUser = {setUser}/>}
         </div>
         <div className="Table">
           <CoinsTable />
