@@ -28,15 +28,14 @@
 }
 
 .day-buttons {
-    width: 80%;
+    margin-top: 2%;
+    width: 90%;
     display: flex;
     flex-direction: row;
     margin-bottom: 5%;
 }
 
-.day-buttons:hover{
-    background-color: blueviolet;
-}
+
 
 
 @media only screen and (max-width: 768px) {
