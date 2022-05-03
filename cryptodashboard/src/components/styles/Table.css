@@ -16,8 +16,7 @@
   /* border-top: 4px solid purple;
   border-left: 4px solid purple;
   border-right: 4px solid purple; */
-  padding: 20px 0;
-      
+  padding: 20px 0;   
 }
 
 .textfield {
@@ -48,10 +47,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 
 .row {
-  background-color: rgb(9, 0, 27);
+  background-color:rgb(9, 0, 27);
+  border: none;
+  color: rgb(255, 255, 255);
 }
 
 .cell {
@@ -66,7 +68,7 @@ span {
 background-image: linear-gradient(#17023f, #1f074b, #17023f); */
 
 .pageList{
-    background-color: white;
+    background-color: rgba(26, 85, 194, 0.637);
 }
 
 h3 {
