@@ -13,9 +13,9 @@ import {
   TableBody,
 } from "@material-ui/core";
 import Pagination from "@material-ui/lab/Pagination";
-// import numberWithComma from "./Carousel";
 import "./styles/Table.css";
 import { useHistory } from "react-router-dom";
+
 
 export const CoinsTable = () => {
   const [coins, setCoins] = useState([]);
@@ -28,7 +28,6 @@ export const CoinsTable = () => {
   const fetchCoins = async () => {
     setLoading(true);
     const { data } = await axios.get(CoinList(currency));
-    console.log("Data here");
     console.log(data);
 
     setCoins(data);
@@ -58,9 +57,8 @@ export const CoinsTable = () => {
           <TextField
             className="textfield"
             label="Search for a Crpyto Currency.."
-            onChange={(e) => setSearch(e.target.value)}
-            
-            
+            onChange={(e) => setSearch(e.target.value)}  
+                 
           />
         </div>
         <TableContainer >
@@ -72,6 +70,7 @@ export const CoinsTable = () => {
                 <TableRow className="tableheading" >
                   {[
                     "Coin",
+                    "Favourite",
                     "Current Price",
                     "24h Change",
                     "Percentage from All Time Low",
@@ -80,7 +79,11 @@ export const CoinsTable = () => {
                     <TableCell
                       className="headingCell"
                       key={head}
-                      align={head === "Coin" ? "" : "right"}
+                      align="center"
+                      style={{
+                        color: "white",
+                        fontWeight: "400",
+                      }}
                       
                     >
                       {head}
@@ -94,12 +97,15 @@ export const CoinsTable = () => {
                   .map((row) => {
                     const profit = row.price_change_percentage_24h > 0;
                     return (
-                      <TableRow
-                        className="row"
-                        key={row.name}
-                        onClick={() => history.push(`/coins/${row.id}`)}
-                      >
-                        <TableCell className="cell">
+                      <TableRow className="row" key={row.name}>
+                        <TableCell
+                          className="cell"
+                          style={{
+                            color: "white",
+                            fontWeight: "400",
+                          }}
+                          onClick={() => history.push(`/coins/${row.id}`)}
+                        >
                           <div className="coinCell">
                             <img src={row?.image} alt={row.name} height="50" />
                             <div className="spanSection">
@@ -108,25 +114,51 @@ export const CoinsTable = () => {
                             </div>
                           </div>
                         </TableCell>
-                        <TableCell className="cell" align="right">
-                          {symbol} {row.current_price.toLocaleString("en-us")}
-                          {/* {numberWithComma(row.current_price.toFixed(2))} */}
+                        <TableCell className="cell">
+                          <button className="favouriteButton">
+                            {" "}
+                            Favourite{" "}
+                          </button>
                         </TableCell>
                         <TableCell
                           className="cell"
                           align="right"
                           style={{
-                            color: profit > 0 ? "rgb(14, 203, 129)" : "red",
+                            color: "white",
+                            fontWeight: "400",
+                          }}
+                        >
+                          {symbol} {row.current_price.toLocaleString("en-us")}
+                        </TableCell>
+                        <TableCell
+                          className="cell"
+                          align="right"
+                          style={{
+                            color: profit > 0 ? "rgb(53, 224, 47)" : "red",
                             fontWeight: 500,
                           }}
                         >
                           {profit && "+"}
                           {row.price_change_percentage_24h.toFixed(2)}%
                         </TableCell>
-                        <TableCell className="cell" align="right">
+                        <TableCell
+                          className="cell"
+                          align="right"
+                          style={{
+                            color: "white",
+                            fontWeight: "400",
+                          }}
+                        >
                           {row.atl_change_percentage}%
                         </TableCell>
-                        <TableCell className="cell" align="right">
+                        <TableCell
+                          className="cell"
+                          align="right"
+                          style={{
+                            color: "white",
+                            fontWeight: "400",
+                          }}
+                        >
                           {symbol} {row.market_cap.toLocaleString("en-us")}
                         </TableCell>
                       </TableRow>

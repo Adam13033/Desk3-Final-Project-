@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 .containerTable {
   /* container for the whole table */
   /* background-color: rgb(255, 255, 255); */
@@ -5,10 +7,12 @@
   color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
+  
 }
 
 .borderdiv {
   border: 4px solid purple;
+  
 }
 .tableTitle {
   background-color: rgb(9, 0, 27);
@@ -16,14 +20,14 @@
   /* border-top: 4px solid purple;
   border-left: 4px solid purple;
   border-right: 4px solid purple; */
-  padding: 20px 0;   
+  padding: 20px 0;
+  
 }
 
 .textfield {
-  background-color: rgb(22, 0, 65);
+  background-color: rgb(255, 255, 255);
   width: 90%;
-  border-radius: 25px;
-  margin-top: 1000px;
+ 
 }
 
 .tableheading {
@@ -32,15 +36,17 @@
 }
 
 .headingCell {
-  color: rgb(251, 251, 251);
-  /* border: 4px solid purple; */
+  border-top: 2px solid purple;
+  border-right: 2px solid purple;
   text-align: center;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .coinCell {
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 .spanSection {
@@ -57,7 +63,9 @@
 }
 
 .cell {
-  border: 2px solid purple;
+  border-top: 2px solid purple;  
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
 }
 
 span {
@@ -68,9 +76,21 @@ span {
 background-image: linear-gradient(#17023f, #1f074b, #17023f); */
 
 .pageList{
-    background-color: rgba(26, 85, 194, 0.637);
+    background-color: rgb(255, 255, 255);
 }
 
 h3 {
   margin-bottom: 4vh;
+}
+
+.favouriteButton{
+  width:100%;
+  height:100%;
+  background-color: rgb(134, 111, 219);
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+}
+.MuiTable-root{
+overflow: hidden;
 }
