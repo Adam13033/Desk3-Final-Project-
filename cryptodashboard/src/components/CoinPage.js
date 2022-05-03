@@ -20,7 +20,7 @@ const CoinPage = ({ btcData, data }) => {
 
     setCoin(data);
   };
-  
+
   console.log("data", { data });
 
   useEffect(() => {
@@ -28,92 +28,69 @@ const CoinPage = ({ btcData, data }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-
-
   // if (!coin) return <LinearProgress style={{ backgroundColor: "gold" }} />;
 
   return (
     <div className="container">
       <Navbar />
       <div className="topside">
+      <div className="coinTitles">
         <img
           src={coin?.image.large}
           alt={coin?.name}
           height="200"
-          style={{ marginBottom: 20 }}
+          style={{ marginRight: 0 }}
         />
-        <h3 className="headingTitle">
-          {coin?.name}
-        </h3>
-        <h3 className="headingSymbol">
-        {coin?.symbol.toUpperCase()}
-        </h3>
-        <div className="description">
-        <p>
-          {ReactHtmlParser(coin?.description.en)}
-        </p>
+          <h3 className="headingTitle">{coin?.name}</h3>
+          <h3 className="headingSymbol">{coin?.symbol.toUpperCase()}</h3>
         </div>
-        <div className="marketData">
-          <div className="dataSection"> 
-            <h5 className="heading">
-              Rank:
-            </h5>
-            &nbsp; &nbsp;
-            <h5 className="heading">
-              {coin?.market_cap_rank}
-            </h5>
-          </div>
-          <div className="dataSection">
-            <h5 className="heading">
-              Current Price:
-            </h5>
-            &nbsp; &nbsp;
-            <h5 className="heading">
-              {symbol} {coin?.market_data.current_price[currency.toLowerCase()]}
-            </h5>
-          </div>
-          <div className="dataSection">
-            <h5 className="heading">
-              Market Cap:
-            </h5>
-            &nbsp; &nbsp;
-            <h5>
-              {symbol}{" "}
-              {coin?.market_data.market_cap[currency.toLowerCase()]
-                .toString()
-                .slice(0, -6)}
-              M
-            </h5>
-          </div>
-          <div className="dataSection">
-            <h5 className="heading">
-              All Time High (ATH):
-            </h5>
-            &nbsp; &nbsp;
-            <h5 className="heading">
-              {symbol} {coin?.market_data.ath[currency.toLowerCase()]}
-            </h5>
-          </div>
-          <div className="dataSection">
-            <h5 className="heading">
-              Current Circulating Supply:
-            </h5>
-            &nbsp; &nbsp;
-            <h5 className="heading">
-              {coin?.market_data.circulating_supply}
-            </h5>
-          </div>
-          <div className="dataSection">
-            <h5 className="heading">
-              Max Supply:
-            </h5>
-            &nbsp; &nbsp;
-            <h5 className="heading">
-              {coin?.market_data.max_supply}
-            </h5>
-          </div>
+        <div className="description">
+          <p>{ReactHtmlParser(coin?.description.en)}</p>
         </div>
       </div>
+      <div className="marketData">
+        <div className="dataSection">
+          <h5 className="heading">Rank:</h5>
+          &nbsp; &nbsp;
+          <h5 className="heading">{coin?.market_cap_rank}</h5>
+        </div>
+        <div className="dataSection">
+          <h5 className="heading">Current Price:</h5>
+          &nbsp; &nbsp;
+          <h5 className="heading">
+            {symbol} {coin?.market_data.current_price[currency.toLowerCase()]}
+          </h5>
+        </div>
+        <div className="dataSection">
+          <h5 className="heading">Market Cap:</h5>
+          &nbsp; &nbsp;
+          <h5>
+            {symbol}{" "}
+            {coin?.market_data.market_cap[currency.toLowerCase()]
+              .toString()
+              .slice(0, -6)}
+            M
+          </h5>
+        </div>
+        <div className="dataSection">
+          <h5 className="heading">All Time High (ATH):</h5>
+          &nbsp; &nbsp;
+          <h5 className="heading">
+            {symbol} {coin?.market_data.ath[currency.toLowerCase()]}
+          </h5>
+        </div>
+        <div className="dataSection">
+          <h5 className="heading">Current Circulating Supply:</h5>
+          &nbsp; &nbsp;
+          <h5 className="heading">{coin?.market_data.circulating_supply}</h5>
+        </div>
+        <div className="dataSection">
+          <h5 className="heading">Max Supply:</h5>
+          &nbsp; &nbsp;
+          <h5 className="heading">{coin?.market_data.max_supply}</h5>
+        </div>
+      </div>
+
       <Ethbtcchart />
       <Footer />
     </div>
