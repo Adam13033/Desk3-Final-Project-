@@ -1,5 +1,5 @@
 .select-button {
-  border: rgba(94, 1, 180) 2px solid;
+  border: none;
   width: 100%;
   margin: 0 12px;
   border-radius: 8px;
@@ -11,8 +11,8 @@
 
 
 .select-button:hover{
-  background-color: blueviolet;
-
+  background-color: rgb(243, 2, 183);
+  transition: background-color 1s ease;
 }
 
 /* 

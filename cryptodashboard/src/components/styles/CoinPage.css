@@ -5,6 +5,12 @@
 .topside{
     padding: 2%;
     margin-bottom: 3%;
+    margin-top: 1%;
+    margin-right: 1%;
+    margin-left: 1%;
+    border: rgba(94, 1, 180, 0.459) 1px solid;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, rgba(98, 0, 255, 0.034), rgba(119, 0, 255, 0.164),rgba(98, 0, 255, 0.034));;
 }
 
 .marketData{
@@ -21,14 +27,12 @@
 
 .dataSection{
     margin: 0 5%;
-    
     text-decoration: none;
 }
 
 .description{
     padding: 0 2.5%;
     text-align: justify;
-
 }
 
 a{
