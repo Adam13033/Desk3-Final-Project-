@@ -1,11 +1,18 @@
 .select-button {
-  border: 4px solid purple;
+  border: rgba(94, 1, 180) 2px solid;
   width: 100%;
-  margin: 10px;
-  border-radius: 80px;
+  margin: 0 12px;
+  border-radius: 8px;
   padding: 6px 20px;
-  background-color: #18002d;
-    
+  background-image: linear-gradient(to bottom, rgba(174, 0, 255, 0.307),rgba(174, 0, 255, 0.068));
+  cursor: pointer;
+  font-weight: 300;
+}
+
+
+.select-button:hover{
+  background-color: blueviolet;
+
 }
 
 /* 

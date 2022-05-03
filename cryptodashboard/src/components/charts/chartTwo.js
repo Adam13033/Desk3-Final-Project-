@@ -61,6 +61,9 @@ export const ChartTwo = ({ day, tension, days }) => {
     setOpen(true);
   };
 
+  const names = btc.charAt(0).toUpperCase();
+  const completeName = names + btc.slice(1);
+
   return (
     <div className="main-div-menu">
       <div className="chartsmenu">
@@ -137,7 +140,7 @@ export const ChartTwo = ({ day, tension, days }) => {
               datasets: [
                 {
                   data: chartOne.map((coin) => coin[1]),
-                  label: `${btc} Price ( Past ${day} ) in ${currency}`,
+                  label: `${completeName} Price ( Past ${day} ) in ${currency}`,
                   borderColor: "rgb(192,192,192)",
                 },
               ],
