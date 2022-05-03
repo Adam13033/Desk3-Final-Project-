@@ -1,0 +1,55 @@
+.container{
+    background-color: rgb(16, 1, 45);
+}
+
+.topside{
+    padding: 2%;
+    margin-bottom: 3%;
+}
+
+.marketData{
+    margin-top: 3%;
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(217, 86, 217, 0.109);
+    justify-content: center;
+    border-radius: 80px;
+    align-items: center;
+    padding: 8px;
+    border: rgba(94, 1, 180, 0.623) 4px solid;   
+}
+
+.dataSection{
+    margin: 0 5%;
+    
+    text-decoration: none;
+}
+
+.description{
+    padding: 0 2.5%;
+    text-align: justify;
+
+}
+
+a{
+    color: white;
+}
+
+h3{
+    font-size: 32px;
+    color: rgb(255, 255, 255);
+}
+
+h5{
+    color:rgb(255, 255, 255);
+    font-weight: 200;
+    font-size: 16px;
+}
+
+p{
+    
+    color:rgb(255, 255, 255);
+}
+.headingTitle{
+    margin-bottom: 4px;
+}

@@ -51,6 +51,9 @@ export const ChartWMenu = ({ day, tension, days }) => {
     // eslint-disable-next-line
   }, [btc, day, currency]);
 
+  const names = btc.charAt(0).toUpperCase();
+  const completeName = names + btc.slice(1);
+
   const handleClose = () => {
     setOpen(false);
   };
@@ -132,7 +135,7 @@ export const ChartWMenu = ({ day, tension, days }) => {
               datasets: [
                 {
                   data: chartOne.map((coin) => coin[1]),
-                  label: `${btc} Price ( Past ${day} ) in ${currency}`,
+                  label: `${completeName} Price ( Past ${day} ) in ${currency}`,
                   borderColor: "rgb(192,192,192)",
                 },
               ],
