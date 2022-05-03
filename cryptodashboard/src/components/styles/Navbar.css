@@ -25,6 +25,12 @@
   margin: 0 1vw;
 }
 
+.buttons:hover{
+  color: rgb(2, 135, 243);
+  transition: background-color 2s ease;
+  animation: glow is infinite alternate;
+}
+
 /* .button1 {
   font-size: 45px;
   color: rgba(230, 7, 250, 0.959);
@@ -50,7 +56,6 @@
   /* border: solid red 3px; */
   margin-right: 1vw;
 }
-
 
 
 /* 
