@@ -1,0 +1,39 @@
+.modalText{
+    color: rgb(65, 65, 65);
+    font-size: 14px;
+}
+
+.mailDiv{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+    border: 2px solid rgb(163, 163, 163);
+    border-radius: 10px;
+    padding: 8px;
+    margin-bottom: 2%;;
+}
+
+.newsLetter{
+    display: flex;
+}
+
+.newsLetterButton{
+    border: none;
+    background-color: rgba(255, 0, 0, 0);
+    margin-top: 1px;
+    margin-left: 4px;   
+    color: rgba(78, 142, 194, 0.743); 
+}
+
+.newsLetterButton:hover{
+    color: rgba(255, 4, 4, 0.743); 
+}
+
+.titleDiv{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 6px;
+    font-size: 24px;
+    text-decoration: underline;
+}
+

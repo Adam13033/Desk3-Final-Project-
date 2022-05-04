@@ -9,21 +9,28 @@ import "../components/styles/Navbar.css";
 import { Link } from "react-router-dom";
 import AboutUsModal from "./modals/aboutUs";
 import ProfileModal from "./modals/Profile";
+import MailModal from "./modals/mail";
+
 
 const Navbar = ({ handleOpen, handleClose, }) => {
 const [aboutUs, setAboutUs] = useState(false);
 const [profile, setProfile] = useState(false);
+const [mail, setMail] = useState(false);
 
   const handleClick = (event) => {
     event.preventDefault();
-    setAboutUs(!false)
+    setAboutUs(!aboutUs)
+    
+  }
+  const handleClickMail = (event) => {
+    event.preventDefault();
+    setMail(!mail)
   }
 
   const handleClickProfile = (event) => {
     event.preventDefault();
     setProfile(!false)
   }
-
 
   return (
     <div className="Navbar">
@@ -38,15 +45,20 @@ const [profile, setProfile] = useState(false);
         </Link>
       </div>
       <div className="navRight">
-        <Link to={`/mail`}>
-          <button className="buttons">
-            <GoMail />
+        {/* <Link to={`/mail`}> */}
+        <button className="buttons"  onClick={handleClickMail}>
+            <GoMail onClick={handleClickMail}/>
+            {mail && <MailModal handleClose={ handleClose }
+            mail={mail} onClose={() => setMail(!mail)}
+            />} 
           </button>
-        </Link>
+        {/* </Link> */}
         {/* <Link to={`/info`}> */}
-          <button className="buttons"  onClick={() => setAboutUs(!aboutUs)}>
-            <BsInfoCircle onClick={() => setAboutUs(!aboutUs)}/>
-            {aboutUs && <AboutUsModal handleClose={ handleClose } aboutUs={aboutUs} onClose={() => setAboutUs(!aboutUs)}/>}
+          <button className="buttons"  onClick={handleClick}>
+            <BsInfoCircle onClick={handleClick}/>
+            {aboutUs && <AboutUsModal handleClose={ handleClose }
+            aboutUs={aboutUs} onClose={() => setAboutUs(!aboutUs)}
+            />} 
           </button>
         {/* </Link> */}
         <Link to={`/favs`}>
