@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { signUp } from "./signUp";
+import "../components/styles/UserForm.css";
+import Logo from "../components/images/Logo.jpg"
 
 export const UserForm = ({ setUser }) => {
   const [username, setUserName] = useState();
@@ -13,19 +15,26 @@ export const UserForm = ({ setUser }) => {
   };
 
     return (
-        <div>
+        <div className="LoginPage">
+          <div className="left-div">
+          <img className="LoginLogo" src={Logo} alt="Logo" />
+          </div>
+          
+          <div className="LoginBox">
+          <p className="LoginText">Login to view charts</p>
             <form onSubmit = {submitHandler}>
-                <input onChange = {(e) => setUserName(e.target.value)}
+                <input className="LoginBoxes" onChange = {(e) => setUserName(e.target.value)}
                 placeholder = "Username" />
-                <input onChange = {(e) => setEmail(e.target.value)}
+                <input className="LoginBoxes" onChange = {(e) => setEmail(e.target.value)}
                 placeholder = "Email" />
-                <input onChange = {(e) => setPassword(e.target.value)}
+                <input className="LoginBoxes" onChange = {(e) => setPassword(e.target.value)}
                 placeholder = "Password"
                 type = {show ? "text" : "password"}
                 onMouseOver = {() => setShow (!show)}
                 onMouseOut = {() => setShow (!show)}/>
-                <button type="submit">Submit</button>
+                <button className="SubmitBtn" type="submit">Submit</button>
             </form>
         </div>
+      </div>
     )
 }
