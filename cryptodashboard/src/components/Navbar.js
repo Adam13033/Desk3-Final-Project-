@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoStarOutline } from "react-icons/io5";
 import Logo from "./images/Logo.jpg";
 import WroteLogo from "./images/ARTIS.png";
@@ -7,8 +7,17 @@ import { GoMail } from "react-icons/go";
 import { BsInfoCircle } from "react-icons/bs";
 import "../components/styles/Navbar.css";
 import { Link } from "react-router-dom";
+import AboutUsModal from "./modals/aboutUs";
 
-const Navbar = () => {
+const Navbar = ({ handleOpen, handleClose }) => {
+const [aboutUs, setAboutUs] = useState(false);
+
+  const handleClick = (event) => {
+    event.preventDefault();
+    setAboutUs(!false)
+  }
+
+
   return (
     <div className="Navbar">
       <div className="navLeft">
@@ -27,11 +36,13 @@ const Navbar = () => {
             <GoMail />
           </button>
         </Link>
-        <Link to={`/info`}>
-          <button className="buttons">
-            <BsInfoCircle />
+        {/* <Link to={`/info`}> */}
+          <button className="buttons"  onClick={() => setAboutUs(!aboutUs)}>
+            <BsInfoCircle onClick={() => setAboutUs(!aboutUs)}/>
+            {aboutUs && <AboutUsModal handleClose={ handleClose } aboutUs={aboutUs} onClose={() => setAboutUs(!aboutUs)}/>} 
+
           </button>
-        </Link>
+        {/* </Link> */}
         <Link to={`/favs`}>
           <button className="buttons">
             <IoStarOutline />
