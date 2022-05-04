@@ -29,7 +29,7 @@ const MainDiv = () => {
         </div>
         <div className="Charts">
           {user ? <Ethbtcchart /> : <UserForm setUser = {setUser}/>}
-          <Ethbtcchart />
+          {/* <Ethbtcchart /> */}
         </div>
         <div className="Table">
           <CoinsTable />
