@@ -8,10 +8,13 @@ import { BsInfoCircle } from "react-icons/bs";
 import "../components/styles/Navbar.css";
 import { Link } from "react-router-dom";
 import AboutUsModal from "./modals/aboutUs";
+import ProfileModal from "./modals/Profile";
 import MailModal from "./modals/mail";
 
-const Navbar = ({ handleOpen, handleClose }) => {
+
+const Navbar = ({ handleOpen, handleClose, }) => {
 const [aboutUs, setAboutUs] = useState(false);
+const [profile, setProfile] = useState(false);
 const [mail, setMail] = useState(false);
 
   const handleClick = (event) => {
@@ -22,6 +25,11 @@ const [mail, setMail] = useState(false);
   const handleClickMail = (event) => {
     event.preventDefault();
     setMail(!mail)
+  }
+
+  const handleClickProfile = (event) => {
+    event.preventDefault();
+    setProfile(!false)
   }
 
   return (
@@ -43,7 +51,6 @@ const [mail, setMail] = useState(false);
             {mail && <MailModal handleClose={ handleClose }
             mail={mail} onClose={() => setMail(!mail)}
             />} 
-
           </button>
         {/* </Link> */}
         {/* <Link to={`/info`}> */}
@@ -52,7 +59,6 @@ const [mail, setMail] = useState(false);
             {aboutUs && <AboutUsModal handleClose={ handleClose }
             aboutUs={aboutUs} onClose={() => setAboutUs(!aboutUs)}
             />} 
-
           </button>
         {/* </Link> */}
         <Link to={`/favs`}>
@@ -60,11 +66,12 @@ const [mail, setMail] = useState(false);
             <IoStarOutline />
           </button>
         </Link>
-        <Link to={`/account`}>
-          <button className="buttons">
-            <VscAccount />
+        {/* <Link to={`/account`}> */}
+          <button className="buttons"  onClick={() => setProfile(!profile)}>
+            <VscAccount onClick={() => setProfile(!profile)}/>
+            {profile && <ProfileModal handleClose={ handleClose } profile={profile} onClose={() => setProfile(!profile)}/>}
           </button>
-        </Link>
+        {/* </Link> */}
       </div>
     </div>
   );
