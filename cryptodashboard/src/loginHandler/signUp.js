@@ -1,12 +1,13 @@
-export const signUp = async (username, email, password, setUser) => {
+export const signUp = async (username, email, password, favourites, setUser) => {
   try {
-    const res = await fetch("http://localhost:3001/user", {
+    const res = await fetch(`${process.env.REACT_APP_REST_API}user`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         username: username,
         email: email,
         password: password,
+        favourites: favourites
       }),
     });
     const data = await res.json();
@@ -22,7 +23,7 @@ export const signUp = async (username, email, password, setUser) => {
 
 export const tokenFetch = async (setUser) => {
   try {
-    const res = await fetch("http://localhost:3001/user", {
+    const res = await fetch(`${process.env.REACT_APP_REST_API}user`, {
       method: "GET",
       headers: { Authorization: `Bearer ${localStorage.getItem("myToken")}` },
     });
@@ -35,7 +36,7 @@ export const tokenFetch = async (setUser) => {
 
 export const remove = async (setUser) =>{
   try {
-    const res = await fetch("http://localhost:3001/user", {
+    const res = await fetch(`${process.env.REACT_APP_REST_API}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${localStorage.getItem("myToken")}` },
     })
@@ -48,7 +49,7 @@ export const remove = async (setUser) =>{
 
 export const replace = async (username, password, email, setUser) => {
   try {
-    const res = await fetch("http://localhost:3001/user", {
+    const res = await fetch(`${process.env.REACT_APP_REST_API}user`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -64,13 +65,13 @@ export const replace = async (username, password, email, setUser) => {
   }
 }
 
-export const favourites = async (_id, setFavourites) => {
+export const favourites = async (username, setFavourites) => {
   try {
-    const res = await fetch("http://localhost:3001/user", {
+    const res = await fetch(`${process.env.REACT_APP_REST_API}favourites`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        _id: _id,
+        username: username,
         favourites: setFavourites,
       }),
     })
