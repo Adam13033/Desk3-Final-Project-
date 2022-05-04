@@ -5,9 +5,9 @@ import { CoinsTable } from "./Table";
 import "./styles/MainDiv.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { UserForm } from "../loginHandler/userForm";
 import { tokenFetch } from "../loginHandler/signUp";
 import { useState, useEffect } from "react";
+import { UserForm } from "../loginHandler/userForm"
 
 const MainDiv = () => {
 
@@ -29,6 +29,7 @@ const MainDiv = () => {
         </div>
         <div className="Charts">
           {user ? <Ethbtcchart /> : <UserForm setUser = {setUser}/>}
+          <Ethbtcchart />
         </div>
         <div className="Table">
           <CoinsTable />
