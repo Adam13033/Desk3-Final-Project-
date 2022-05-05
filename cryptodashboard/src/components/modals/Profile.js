@@ -24,8 +24,7 @@ const useStyles = makeStyles((theme) => ({
     const classes = useStyles();
 
     return(
-      <div>
-   
+      <div className="ProfileDiv">
         <Modal
           aria-labelledby="transition-modal-title"
           aria-describedby="transition-modal-description"
@@ -42,11 +41,13 @@ const useStyles = makeStyles((theme) => ({
           <Fade in={profile}>
             <div className="ProfileModal">
                 <div className = "title">
-                    <h4>ProfilePage</h4>
+                    <h4>Profile</h4>
                     {/* <img className = "profilePic" src = {profileImage} alt = "yourImage"/> */}
-                <div className = "info">
+                <div className = "Username">
                     <h6>Username: demouser</h6>
+                    <div className="Email">
                     <h6>Email: demo@email.com</h6>
+                    </div>
                 </div>
                 </div>
             </div>
