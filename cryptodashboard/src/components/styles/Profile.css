@@ -1,3 +1,13 @@
-.title {
-    text-align: center;
+.info{
+    margin: 20px 20px 20px 20px;
+    color: rgb(65, 65, 65);
+    font-size: 14px;
+}
+
+.titleProfile{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 6px;
+    font-size: 24px;
+    text-decoration: underline;
 }
