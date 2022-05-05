@@ -1,5 +1,4 @@
 import "../styles/Profile.css"
-import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
@@ -20,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-  export const ProfileModal = ({ profile, setProfile }) => {
+  export const ProfileModal = ({ profile }) => {
     const classes = useStyles();
 
     return(
@@ -42,12 +41,13 @@ const useStyles = makeStyles((theme) => ({
           <Fade in={profile}>
             <div className={classes.paper}>
                 <div className = "title">
-                    <h4>ProfilePage</h4>
+                    <h4>ProfilePage </h4>
                 </div>
                     {/* <img className = "profilePic" src = {profileImage} alt = "yourImage"/> */}
                 <div className = "info">
                     <h6>Username: demouser</h6>
                     <h6>Email: demo@email.com</h6>
+
                 </div>
             </div>
           </Fade>

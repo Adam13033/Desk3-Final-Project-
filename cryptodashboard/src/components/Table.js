@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { CryptoState } from "../CryptoContext";
 import { CoinList } from "./utils/api";
 import {
@@ -15,13 +15,15 @@ import {
 import Pagination from "@material-ui/lab/Pagination";
 import "./styles/Table.css";
 import { useHistory } from "react-router-dom";
-
+import { FavouritesContext } from "./FavouritesContext";
 
 export const CoinsTable = () => {
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
+
+  const { favourites, setFavourites } = useContext(FavouritesContext);
 
   const { currency, symbol } = CryptoState();
 
@@ -51,23 +53,22 @@ export const CoinsTable = () => {
   return (
     <div className="borderdiv">
       <div className="containerTable">
-        <div className="tableTitle" >
+        <div className="tableTitle">
           <h3> Cryptocurrency Prices by Market Capitalisation</h3>
 
           <TextField
             className="textfield"
             label="Search for a Crpyto Currency.."
-            onChange={(e) => setSearch(e.target.value)}  
-                 
+            onChange={(e) => setSearch(e.target.value)}
           />
         </div>
-        <TableContainer >
+        <TableContainer>
           {loading ? (
             <LinearProgress className="loadingbar" />
           ) : (
             <Table aria-label="simple table">
               <TableHead className="tableHead">
-                <TableRow className="tableheading" >
+                <TableRow className="tableheading">
                   {[
                     "Coin",
                     "Favourite",
@@ -84,7 +85,6 @@ export const CoinsTable = () => {
                         color: "white",
                         fontWeight: "400",
                       }}
-                      
                     >
                       {head}
                     </TableCell>
@@ -115,7 +115,17 @@ export const CoinsTable = () => {
                           </div>
                         </TableCell>
                         <TableCell className="cell">
-                          <button className="favouriteButton">
+                          <button
+                            className="favouriteButton"
+                            onClick={() =>
+                              setFavourites([
+                                ...favourites,
+                                {
+                                  cryptoName: row.id,
+                                },
+                              ])
+                            }
+                          >
                             {" "}
                             Favourite{" "}
                           </button>
