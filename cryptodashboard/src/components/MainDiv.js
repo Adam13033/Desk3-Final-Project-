@@ -16,7 +16,7 @@ const MainDiv = () => {
   useEffect(() => {
     tokenFetch(setUser)
     console.log("testing user", user)
-  }, [])
+  }, [user])
 
   return (
     <div className="LandingPage">
