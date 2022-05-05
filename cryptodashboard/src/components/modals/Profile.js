@@ -40,14 +40,14 @@ const useStyles = makeStyles((theme) => ({
           }}
         >
           <Fade in={profile}>
-            <div className={classes.paper}>
+            <div className="ProfileModal">
                 <div className = "title">
                     <h4>ProfilePage</h4>
-                </div>
                     {/* <img className = "profilePic" src = {profileImage} alt = "yourImage"/> */}
                 <div className = "info">
                     <h6>Username: demouser</h6>
                     <h6>Email: demo@email.com</h6>
+                </div>
                 </div>
             </div>
           </Fade>
