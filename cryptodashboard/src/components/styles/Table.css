@@ -86,11 +86,18 @@ h3 {
 .favouriteButton{
   width:100%;
   height:100%;
-  background-color: rgb(134, 111, 219);
+  background-color: rgb(9, 0, 27);
   border: none;
-  padding: 10px;
   border-radius: 8px;
+  font-size: 35px;
+  color: rgba(255, 0, 157, 0.836);
 }
+
+.favouriteButton:hover {
+  color: rgba(255, 217, 0, 0.836);
+  transition: 1.5s;
+}
+
 .MuiTable-root{
 overflow: hidden;
 }

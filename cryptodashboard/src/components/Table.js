@@ -15,6 +15,7 @@ import {
 import Pagination from "@material-ui/lab/Pagination";
 import "./styles/Table.css";
 import { useHistory } from "react-router-dom";
+import { IoStarOutline } from "react-icons/io5";
 
 
 export const CoinsTable = () => {
@@ -116,8 +117,7 @@ export const CoinsTable = () => {
                         </TableCell>
                         <TableCell className="cell">
                           <button className="favouriteButton">
-                            {" "}
-                            Favourite{" "}
+                          <IoStarOutline/>
                           </button>
                         </TableCell>
                         <TableCell
