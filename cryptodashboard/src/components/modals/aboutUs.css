@@ -1,0 +1,15 @@
+.InfoModal {
+    background-image: linear-gradient(to bottom right, rgba(174, 0, 255, 0.432), rgba(174, 0, 255, 0.692),rgba(174, 0, 255, 0.26));
+    border: 2px rgb(212, 0, 255) double;
+    border-radius: 20px;
+    color: rgb(252, 252, 252);
+    padding: 20px;
+}
+
+.BackDrop {
+    background-image: linear-gradient(to bottom right, rgba(174, 0, 255, 0.432), rgba(174, 0, 255, 0.692),rgba(174, 0, 255, 0.26));
+    border: 2px rgb(212, 0, 255) solid;
+    border-radius: 20px;
+    color: rgb(252, 252, 252);
+    padding: 8px;
+}
