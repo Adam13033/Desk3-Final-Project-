@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import { HistoricalChart } from "./utils/api";
 import { CryptoState } from "../CryptoContext";
 import { Line } from "react-chartjs-2";
+import "./styles/Fav.css";
 
 
 const FavouritesPage = ({ days, tension, day }) => {
@@ -38,7 +39,7 @@ const FavouritesPage = ({ days, tension, day }) => {
         <Navbar />
       </div>
       <div className="Content">
-        <div>
+        <div className="stretchDiv">
           {favourites.map((favourite) => (
             <span>
               {favourite.cryptoName}
