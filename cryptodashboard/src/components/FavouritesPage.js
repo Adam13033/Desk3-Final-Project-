@@ -10,9 +10,13 @@ import "./styles/Fav.css";
 
 const FavouritesPage = ({ days, tension, day }) => {
   const { favourites, setFavourites } = useContext(FavouritesContext);
-  const {currency } = CryptoState();
+  const { currency } = CryptoState();
+  // eslint-disable-next-line
   const [faves, setFaves] = useState('bitcoin');
+  
 
+
+// eslint-disable-next-line
   const crypto = favourites
   let handleFetch = async () => {
    try {
@@ -29,7 +33,10 @@ const FavouritesPage = ({ days, tension, day }) => {
 
   useEffect(() => {
     handleFetch();
+    // eslint-disable-next-line
   }, [])
+  
+  
 
 
 
