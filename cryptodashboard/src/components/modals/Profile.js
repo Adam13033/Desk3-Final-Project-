@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
-// import { profileImage } from "../images/profileImage.jpg";
+import profileImage from "../images/profileImage.jpg";
 
 const useStyles = makeStyles((theme) => ({
     modal: {
@@ -41,8 +41,8 @@ const useStyles = makeStyles((theme) => ({
           <Fade in={profile}>
             <div className="ProfileModal">
                 <div className = "title">
-                    <h4>Profile</h4>
-                    {/* <img className = "profilePic" src = {profileImage} alt = "yourImage"/> */}
+                    <h4 className="title1">Profile</h4>
+                    <img className = "profilePic" src = {profileImage} alt = "yourImage"/>
                 <div className = "Username">
                     <h6>Username: demouser</h6>
                     <div className="Email">
