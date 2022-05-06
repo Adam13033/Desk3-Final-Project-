@@ -15,7 +15,7 @@ const FavouritesPage = ({ days, tension, day }) => {
   const crypto = favourites
   let handleFetch = async () => {
    try {
-     let faveChart = await fetch(HistoricalChart(crypto, days, currency))
+     let faveChart = await fetch(HistoricalChart(favourites, days, currency))
      if (faveChart.status !== 200) {
        throw new Error ("Oops!")
      }
