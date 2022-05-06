@@ -28,7 +28,7 @@ export const UserForm = ({  setUser, user }) => {
           <img className="LoginLogo" src={Logo} alt="Logo" />
           </div>
           <div className="LoginBox">
-          <p className="LoginText">Login to view charts</p>
+          <p className="LoginText">Register</p>
             <form onSubmit = {submitHandler}>
                 <input className="LoginBoxes" onChange = {(e) => setUserName(e.target.value)}
                 placeholder = "Username" />
@@ -42,6 +42,7 @@ export const UserForm = ({  setUser, user }) => {
                 <button className="SubmitBtn" type="submit">Submit</button>
             </form>
             <form onSubmit={loginHandler}>
+              <p className="Login word">Login</p>
               <input className="login" onChange={(event) => setUserName(event.target.value) && setUser(event.target.value)} placeholder="Username" type="test" required />
               <input className="login" onChange={(event) => setPassword(event.target.value)} onSubmit={(event) => setUser(event.target.value)} placeholder="Password" type="text" required />
               <button className="SubmitBtn" type="submit">Login</button>

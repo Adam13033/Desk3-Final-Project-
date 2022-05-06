@@ -14,7 +14,7 @@
     border: 2px rgb(212, 0, 255) solid;
     border-radius: 20px;
     color: rgb(252, 252, 252);
-    padding: 24px;
+    padding: 60px;
 }
 
 .Username{
@@ -29,9 +29,17 @@
     font-size: 20px;
 }
 
+.title1 {
+    margin-bottom: 10%;
+}
+
 .title{
-    margin-bottom: 6px;
     font-size: 24px;
     color: white;
     text-align: center;
+}
+
+.profilePic {
+    border: 4px rgb(4, 88, 243) solid;
+    border-radius: 50%;
 }
