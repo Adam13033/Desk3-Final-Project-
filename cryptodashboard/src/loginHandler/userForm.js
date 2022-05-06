@@ -42,9 +42,9 @@ export const UserForm = ({  setUser, user }) => {
                 <button className="SubmitBtn" type="submit">Submit</button>
             </form>
             <form onSubmit={loginHandler}>
-              <input className="login" onChange={(event) => setUserName(event.target.value) && setUser(event.target.value)} placeholder="username" type="test" required />
-              <input onChange={(event) => setPassword(event.target.value)} onSubmit={(event) => setUser(event.target.value)} placeholder="password" type="text" required />
-              <button type="submit">Login</button>
+              <input className="login" onChange={(event) => setUserName(event.target.value) && setUser(event.target.value)} placeholder="Username" type="test" required />
+              <input className="login" onChange={(event) => setPassword(event.target.value)} onSubmit={(event) => setUser(event.target.value)} placeholder="Password" type="text" required />
+              <button className="SubmitBtn" type="submit">Login</button>
             </form>
         </div>
       </div>
