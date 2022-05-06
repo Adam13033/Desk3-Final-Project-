@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 export const MailModal = ({ mail }) => {
   const classes = useStyles();
   return (
-    <div>
+    <div className="MailModal">
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -36,7 +36,7 @@ export const MailModal = ({ mail }) => {
         }}
       >
         <Fade in={mail}>
-          <div className={classes.paper}>
+          <div className="MainDiv">
             <h2 id="transition-modal-title">Your Mail and Notices</h2>
             <div className="mailContainer">
               <div className="mailDiv">

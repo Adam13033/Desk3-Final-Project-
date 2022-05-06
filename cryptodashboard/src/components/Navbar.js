@@ -69,8 +69,10 @@ const [mail, setMail] = useState(false);
         </Link>
         {/* <Link to={`/account`}> */}
           <button className="buttons"  onClick={handleClickProfile}>
-            <VscAccount onClick={() => setProfile(!profile)}/>
-            {profile && <ProfileModal handleClose={ handleClose } profile={profile}   onClose={handleClickProfile}/>}
+
+            <VscAccount onClick={handleClickProfile}/>
+            {profile && <ProfileModal handleClose={ handleClose } 
+            profile={profile} onClose={() => setProfile(!profile)}/>}
           </button>
         {/* </Link> */}
       </div>

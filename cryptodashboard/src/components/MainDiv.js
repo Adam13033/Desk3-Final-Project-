@@ -15,7 +15,7 @@ const MainDiv = () => {
   useEffect(() => {
     tokenFetch(setUser)
     console.log("testing user", user)
-  }, [])
+  }, [user])
 
   const handleLogout = () => {
     setUser();

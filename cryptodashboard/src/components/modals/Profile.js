@@ -1,4 +1,5 @@
 import "../styles/Profile.css"
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
@@ -19,12 +20,11 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-  export const ProfileModal = ({ profile }) => {
+  export const ProfileModal = ({ profile, setProfile }) => {
     const classes = useStyles();
 
     return(
-      <div>
-   
+      <div className="ProfileDiv">
         <Modal
           aria-labelledby="transition-modal-title"
           aria-describedby="transition-modal-description"
@@ -39,15 +39,16 @@ const useStyles = makeStyles((theme) => ({
           }}
         >
           <Fade in={profile}>
-            <div className={classes.paper}>
+            <div className="ProfileModal">
                 <div className = "title">
-                    <h4>ProfilePage </h4>
-                </div>
+                    <h4>Profile</h4>
                     {/* <img className = "profilePic" src = {profileImage} alt = "yourImage"/> */}
-                <div className = "info">
+                <div className = "Username">
                     <h6>Username: demouser</h6>
+                    <div className="Email">
                     <h6>Email: demo@email.com</h6>
-
+                    </div>
+                </div>
                 </div>
             </div>
           </Fade>

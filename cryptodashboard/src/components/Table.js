@@ -15,7 +15,12 @@ import {
 import Pagination from "@material-ui/lab/Pagination";
 import "./styles/Table.css";
 import { useHistory } from "react-router-dom";
+
 import { FavouritesContext } from "./FavouritesContext";
+
+import { IoStarOutline } from "react-icons/io5";
+
+
 
 export const CoinsTable = () => {
   const [coins, setCoins] = useState([]);
@@ -115,6 +120,7 @@ export const CoinsTable = () => {
                           </div>
                         </TableCell>
                         <TableCell className="cell">
+
                           <button
                             className="favouriteButton"
                             onClick={() =>
@@ -128,6 +134,11 @@ export const CoinsTable = () => {
                           >
                             {" "}
                             Favourite{" "}
+                                              <IoStarOutline/>
+
+
+                  
+
                           </button>
                         </TableCell>
                         <TableCell
@@ -191,80 +202,4 @@ export const CoinsTable = () => {
   );
 };
 
-// return (
-//     <div className="Container">
-//       <h3> Cryptocurrency Prices by Market Capitalisation</h3>
-//       <TextField
-//         label="Search for a Crpyto Currency.."
-//         variant="outlined"
-//         style={{ marginBottom: 20, width: "100%" }}
-//         onChange={(e) => setSearch(e.target.value)}
-//       />
-//       <TableContainer>
-//         {loading ? (
-//           <LinearProgress style={{ backgroundColor: "purple" }} />
-//         ) : (
-//           <Table aria-label="simple table">
-//             <TableHead style={{ backgroundColor: "#FFFFFF" }}>
-//               <TableRow>
-//                 {["Coin", "Price", "24h Change","Percentage from All Time Low", "Market Cap"].map((head) => (
-//                   <TableCell key={head} align={head === "Coin" ? "" : "right"}>
-//                     {head}
-//                   </TableCell>
-//                 ))}
-//               </TableRow>
-//             </TableHead>
 
-//             <TableBody>
-//                 {handleSearch()
-//                 .map((row) => {
-//                     const profit = row.price_change_percentage_24h > 0;
-//                     return (
-//                         <TableRow className="row" key={row.name}>
-//                         <TableCell>
-//                             <img
-//                             src={row?.image}
-//                             alt={row.name}
-//                             height="50"
-//                             style={{marginBottom: 10}}
-//                             />
-//                             <div style={{display: "flex", flexDirection: "column" }}
-//                             >
-//                             <span>{row.symbol}</span>
-//                             <span>{row.name}</span>
-//                             </div>
-//                         </TableCell>
-//                         <TableCell align="right">
-//                           {symbol}{" "}
-//                           {row.current_price.toLocaleString('en-us')}
-//                           {/* {numberWithComma(row.current_price.toFixed(2))} */}
-//                         </TableCell>
-//                         <TableCell
-//                           align="right"
-//                           style={{
-//                             color: profit > 0 ? "rgb(14, 203, 129)" : "red",
-//                             fontWeight: 500,
-//                           }}
-//                         >
-//                           {profit && "+"}
-//                           {row.price_change_percentage_24h.toFixed(2)}%
-//                         </TableCell>
-//                         <TableCell>
-//                             {row.atl_change_percentage}%
-//                         </TableCell>
-//                         <TableCell align="right">
-//                           {symbol}{" "}
-//                           {row.market_cap.toLocaleString('en-us')}
-
-//                         </TableCell>
-//                         </TableRow>
-//                     )
-//                 })}
-
-//             </TableBody>
-//           </Table>
-//         )}
-//       </TableContainer>
-//     </div>
-//   );
-// };
