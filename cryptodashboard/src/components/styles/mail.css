@@ -35,7 +35,6 @@
 
 .newsLetter{
     display: flex;
-
 }
 
 .newsLetterButton{
@@ -59,4 +58,3 @@
     border-top: 2px rgb(212, 0, 255) solid;
 
 }
-

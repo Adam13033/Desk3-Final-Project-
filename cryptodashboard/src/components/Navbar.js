@@ -46,35 +46,29 @@ const [mail, setMail] = useState(false);
         </Link>
       </div>
       <div className="navRight">
-        {/* <Link to={`/mail`}> */}
         <button className="buttons"  onClick={handleClickMail}>
             <GoMail onClick={handleClickMail}/>
             {mail && <MailModal handleClose={ handleClose }
             mail={mail} onClose={() => setMail(!mail)}
             />} 
           </button>
-        {/* </Link> */}
-        {/* <Link to={`/info`}> */}
           <button className="buttons"  onClick={handleClick}>
             <BsInfoCircle onClick={handleClick}/>
             {aboutUs && <AboutUsModal handleClose={ handleClose }
             aboutUs={aboutUs} onClose={() => setAboutUs(!aboutUs)}
             />} 
           </button>
-        {/* </Link> */}
         <Link to={`/favourites`}>
           <button className="buttons">
             <IoStarOutline />
           </button>
         </Link>
-        {/* <Link to={`/account`}> */}
           <button className="buttons"  onClick={handleClickProfile}>
 
             <VscAccount onClick={handleClickProfile}/>
             {profile && <ProfileModal handleClose={ handleClose } 
             profile={profile} onClose={() => setProfile(!profile)}/>}
           </button>
-        {/* </Link> */}
       </div>
     </div>
   );
