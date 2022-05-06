@@ -33,6 +33,7 @@ const [mail, setMail] = useState(false);
   }
 
   return (
+
     <div className="Navbar">
       <div className="navLeft">
         <Link to={`/`} className="link home">
@@ -61,13 +62,14 @@ const [mail, setMail] = useState(false);
             />} 
           </button>
         {/* </Link> */}
-        <Link to={`/favs`}>
+        <Link to={`/favourites`}>
           <button className="buttons">
             <IoStarOutline />
           </button>
         </Link>
         {/* <Link to={`/account`}> */}
           <button className="buttons"  onClick={handleClickProfile}>
+
             <VscAccount onClick={handleClickProfile}/>
             {profile && <ProfileModal handleClose={ handleClose } 
             profile={profile} onClose={() => setProfile(!profile)}/>}

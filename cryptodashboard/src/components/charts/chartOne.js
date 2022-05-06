@@ -19,21 +19,21 @@ import {
 
 export const ChartWMenu = ({ day, tension, days }) => {
   const [menu, setMenu] = useState([]);
-  const [btc, setBtc] = useState("bitcoin");
+  const [api, setApi] = useState("bitcoin");
   const { currency, setCurrency } = CryptoState();
   const [chartOne, setChartOne] = useState([]);
   const [open, setOpen] = useState(false);
 
   let handleFetch = async () => {
     try {
-      let btcFetch = await fetch(HistoricalChart(btc, days, currency));
-      if (btcFetch.status !== 200) {
+      let chartOneFetch = await fetch(HistoricalChart(api, days, currency));
+      if (chartOneFetch.status !== 200) {
         throw new Error("Oops!");
       }
       // json parsing
-      let btcData = await btcFetch.json();
-      console.log("response", btcData);
-      setChartOne(btcData.prices);
+      let chartOneData = await chartOneFetch.json();
+
+      setChartOne(chartOneData.prices);
     } catch (error) {
       console.error("error:", error);
     }
@@ -49,10 +49,10 @@ export const ChartWMenu = ({ day, tension, days }) => {
   useEffect(() => {
     handleFetch();
     // eslint-disable-next-line
-  }, [btc, day, currency]);
+  }, [api, day, currency]);
 
-  const names = btc.charAt(0).toUpperCase();
-  const completeName = names + btc.slice(1);
+  const names = api.charAt(0).toUpperCase();
+  const completeName = names + api.slice(1);
 
   const handleClose = () => {
     setOpen(false);
@@ -89,8 +89,8 @@ export const ChartWMenu = ({ day, tension, days }) => {
                 <Select
                   labelId="demo-dialog-select-label"
                   id="demo-dialog-select"
-                  value={btc}
-                  onChange={(event) => setBtc(event.target.value)}
+                  value={api}
+                  onChange={(event) => setApi(event.target.value)}
                   input={<Input />}
                 >
                   <MenuItem value="">

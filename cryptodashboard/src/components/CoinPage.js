@@ -10,7 +10,7 @@ import Ethbtcchart from "./charts/dashboardCharts";
 import Footer from "./Footer";
 import "./styles/CoinPage.css";
 
-const CoinPage = ({ btcData, data }) => {
+const CoinPage = ({ btcData, data, user }) => {
   const { id } = useParams();
   const [coin, setCoin] = useState();
   const { currency, symbol } = CryptoState();

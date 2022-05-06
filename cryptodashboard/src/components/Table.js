@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { CryptoState } from "../CryptoContext";
 import { CoinList } from "./utils/api";
 import {
@@ -15,7 +15,11 @@ import {
 import Pagination from "@material-ui/lab/Pagination";
 import "./styles/Table.css";
 import { useHistory } from "react-router-dom";
+
+import { FavouritesContext } from "./FavouritesContext";
+
 import { IoStarOutline } from "react-icons/io5";
+
 
 
 export const CoinsTable = () => {
@@ -23,6 +27,8 @@ export const CoinsTable = () => {
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
+
+  const { favourites, setFavourites } = useContext(FavouritesContext);
 
   const { currency, symbol } = CryptoState();
 
@@ -52,23 +58,22 @@ export const CoinsTable = () => {
   return (
     <div className="borderdiv">
       <div className="containerTable">
-        <div className="tableTitle" >
+        <div className="tableTitle">
           <h3> Cryptocurrency Prices by Market Capitalisation</h3>
 
           <TextField
             className="textfield"
             label="Search for a Crpyto Currency.."
-            onChange={(e) => setSearch(e.target.value)}  
-                 
+            onChange={(e) => setSearch(e.target.value)}
           />
         </div>
-        <TableContainer >
+        <TableContainer>
           {loading ? (
             <LinearProgress className="loadingbar" />
           ) : (
             <Table aria-label="simple table">
               <TableHead className="tableHead">
-                <TableRow className="tableheading" >
+                <TableRow className="tableheading">
                   {[
                     "Coin",
                     "Favourite",
@@ -85,7 +90,6 @@ export const CoinsTable = () => {
                         color: "white",
                         fontWeight: "400",
                       }}
-                      
                     >
                       {head}
                     </TableCell>
@@ -116,8 +120,25 @@ export const CoinsTable = () => {
                           </div>
                         </TableCell>
                         <TableCell className="cell">
-                          <button className="favouriteButton">
-                          <IoStarOutline/>
+
+                          <button
+                            className="favouriteButton"
+                            onClick={() =>
+                              setFavourites([
+                                ...favourites,
+                                {
+                                  cryptoName: row.id,
+                                },
+                              ])
+                            }
+                          >
+                            {" "}
+                            Favourite{" "}
+                                              <IoStarOutline/>
+
+
+                  
+
                           </button>
                         </TableCell>
                         <TableCell
@@ -181,80 +202,4 @@ export const CoinsTable = () => {
   );
 };
 
-// return (
-//     <div className="Container">
-//       <h3> Cryptocurrency Prices by Market Capitalisation</h3>
-//       <TextField
-//         label="Search for a Crpyto Currency.."
-//         variant="outlined"
-//         style={{ marginBottom: 20, width: "100%" }}
-//         onChange={(e) => setSearch(e.target.value)}
-//       />
-//       <TableContainer>
-//         {loading ? (
-//           <LinearProgress style={{ backgroundColor: "purple" }} />
-//         ) : (
-//           <Table aria-label="simple table">
-//             <TableHead style={{ backgroundColor: "#FFFFFF" }}>
-//               <TableRow>
-//                 {["Coin", "Price", "24h Change","Percentage from All Time Low", "Market Cap"].map((head) => (
-//                   <TableCell key={head} align={head === "Coin" ? "" : "right"}>
-//                     {head}
-//                   </TableCell>
-//                 ))}
-//               </TableRow>
-//             </TableHead>
 
-//             <TableBody>
-//                 {handleSearch()
-//                 .map((row) => {
-//                     const profit = row.price_change_percentage_24h > 0;
-//                     return (
-//                         <TableRow className="row" key={row.name}>
-//                         <TableCell>
-//                             <img
-//                             src={row?.image}
-//                             alt={row.name}
-//                             height="50"
-//                             style={{marginBottom: 10}}
-//                             />
-//                             <div style={{display: "flex", flexDirection: "column" }}
-//                             >
-//                             <span>{row.symbol}</span>
-//                             <span>{row.name}</span>
-//                             </div>
-//                         </TableCell>
-//                         <TableCell align="right">
-//                           {symbol}{" "}
-//                           {row.current_price.toLocaleString('en-us')}
-//                           {/* {numberWithComma(row.current_price.toFixed(2))} */}
-//                         </TableCell>
-//                         <TableCell
-//                           align="right"
-//                           style={{
-//                             color: profit > 0 ? "rgb(14, 203, 129)" : "red",
-//                             fontWeight: 500,
-//                           }}
-//                         >
-//                           {profit && "+"}
-//                           {row.price_change_percentage_24h.toFixed(2)}%
-//                         </TableCell>
-//                         <TableCell>
-//                             {row.atl_change_percentage}%
-//                         </TableCell>
-//                         <TableCell align="right">
-//                           {symbol}{" "}
-//                           {row.market_cap.toLocaleString('en-us')}
-
-//                         </TableCell>
-//                         </TableRow>
-//                     )
-//                 })}
-
-//             </TableBody>
-//           </Table>
-//         )}
-//       </TableContainer>
-//     </div>
-//   );
-// };
