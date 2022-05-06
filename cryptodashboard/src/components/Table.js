@@ -132,13 +132,7 @@ export const CoinsTable = () => {
                               ])
                             }
                           >
-                            {" "}
-                            Favourite{" "}
                                               <IoStarOutline/>
-
-
-                  
-
                           </button>
                         </TableCell>
                         <TableCell
@@ -201,5 +195,3 @@ export const CoinsTable = () => {
     </div>
   );
 };
-
-

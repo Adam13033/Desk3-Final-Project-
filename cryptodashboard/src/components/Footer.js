@@ -19,6 +19,7 @@ const Footer = () => {
         <button className="noStyle">Information</button>
         <button className="noStyle">Legal</button>
         <button className="noStyle">Privacy</button>
+        <p className="credit">POWERED BY COINGECKO API</p>
       </div>
       <div className="FooterBoxSocial">
         <h3>Social</h3>
